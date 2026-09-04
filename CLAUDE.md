@@ -23,6 +23,7 @@ permaculture-site-plan/
 ├── CLAUDE.md
 ├── site-plan/              — narrative docs, zones, sector analysis, phase plans
 │   ├── site-profile.md      — climate, solar, sector & passive-design reference
+│   ├── progress-log.md      — dated log of on-site work & plan revisions
 │   ├── maps/                — exported Figma base maps
 │   └── sketches/             — iPad Pro scans, dated, raw
 └── inspiration/             — public inbox: links, images, references
@@ -55,6 +56,13 @@ Tasks are ID-prefixed by phase and can depend across phases freely (e.g. `D3` de
 files — it exists for at-a-glance viewing, not as a separate source of truth. When editing a
 task's status/description/dependencies, update it in both the phase file *and* the overview
 file, or they will drift out of sync.
+
+## Progress Log
+
+`site-plan/progress-log.md` is the dated narrative — what happened on the property and
+why the plan changed, newest entry first. Phase files carry current task status; the log
+carries history and the rationale behind dependency/scope revisions. Add an entry
+whenever on-site work happens or a task's dependencies change.
 
 ## Issue Tracking
 
