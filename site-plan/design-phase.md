@@ -8,7 +8,7 @@ identified.
 
 | ID | Task | Description | Depends On | Status | Source |
 |---|---|---|---|---|---|
-| DS1 | Design new shed & overall storage layout | Design the new 10x8 shed (see C5) together with the property's broader storage needs — where raw materials, building supplies, and other overflow gets stored (see S6) — so the shed isn't designed in isolation from the rest of the site's storage. | — | Yet to Begin | Lesson 2 interview |
+| DS1 | Design new shed & overall storage layout | Design the new 10x8 shed (see C5) together with the property's broader storage needs — where raw materials, building supplies, and other overflow gets stored (see S6) — so the shed isn't designed in isolation from the rest of the site's storage. See [site-profile.md](site-profile.md#passive-design--structure-implications) for facade shading/glazing guidance and snow-load context to factor into the design. | — | Yet to Begin | Lesson 2 interview |
 
 ## Notes
 

@@ -3,7 +3,7 @@
 ## Program
 
 Long-term master site plan for a 0.43-acre residential property (Portland,
-OR area). Independent of any course — full authority over scope, timeline,
+CT area). Independent of any course — full authority over scope, timeline,
 and content rests with the owner and his father, the two long-term
 stakeholders. Public during development, not just after completion, to
 demonstrate the technical design approach as it's built.
@@ -11,10 +11,10 @@ demonstrate the technical design approach as it's built.
 ## Privacy
 
 Public docs in this repo never state the exact street address or parcel
-number. Refer to the property generically (e.g. "a 0.43-acre residential
-lot in the Portland area"). Exact parcel records (survey PDFs, parcel
-spreadsheets) are never stored in this repo — they live in a private
-iCloud folder instead.
+number/lot number. Refer to the property generically (e.g. "a 0.43-acre
+residential lot in the Portland, CT area"). Exact parcel records (survey
+PDFs, parcel spreadsheets) are never stored in this repo — they live in a
+private iCloud folder instead.
 
 ## Workspace Structure
 
@@ -22,6 +22,7 @@ iCloud folder instead.
 permaculture-site-plan/
 ├── CLAUDE.md
 ├── site-plan/              — narrative docs, zones, sector analysis, phase plans
+│   ├── site-profile.md      — climate, solar, sector & passive-design reference
 │   ├── maps/                — exported Figma base maps
 │   └── sketches/             — iPad Pro scans, dated, raw
 └── inspiration/             — public inbox: links, images, references
@@ -39,12 +40,23 @@ file, link to it by absolute path. Only finished, ready-to-use assets
 
 Course deliverables for the concurrent Permaculture Design Certificate
 program live in a separate private repo:
-`~/Code/keser/permaculture-certification-summer-26`. Course material stays
+`~/Code/keser/pdc-pro-2026`. Course material stays
 there; anything from the course genuinely useful long-term gets
 deliberately rewritten into this repo in the owner's own words, rather
 than living here natively.
 
-## Task Tracking
+## Task Tracking Convention (site-plan/ phase files)
+
+Tasks are ID-prefixed by phase and can depend across phases freely (e.g. `D3` depends on
+`R17`): `R`=Reset, `C`=Construction, `S`=Establish Systems, `D`=Diversity/Habitat, `DS`=Design
+(ongoing, not sequential — runs alongside whatever phase is active).
+
+`project-plan-overview.md` is a **denormalized rollup** of every task row in the five phase
+files — it exists for at-a-glance viewing, not as a separate source of truth. When editing a
+task's status/description/dependencies, update it in both the phase file *and* the overview
+file, or they will drift out of sync.
+
+## Issue Tracking
 
 Plain GitHub Issues, no Projects board. Labels: `task`, `dad-request`,
 `professor-feedback`.
