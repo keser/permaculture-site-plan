@@ -16,6 +16,11 @@ residential lot in the Portland, CT area"). Exact parcel records (survey
 PDFs, parcel spreadsheets) are never stored in this repo — they live in a
 private iCloud folder instead.
 
+Neighbors and other private third parties are never named — refer to them
+by role ("the adjacent neighbors"), not by name. (The two long-term
+stakeholders, the owner and his father, are referred to by role
+throughout.)
+
 ## Workspace Structure
 
 ```
