@@ -91,7 +91,13 @@ Plain GitHub Issues, no Projects board. Labels: `task`, `dad-request`,
 
 ## Site Microsite (`docs/`)
 
-Published at GitHub Pages once enabled. Plain HTML/CSS, no build step, no JS framework —
+**Live since 2026-09-11:** <https://keser.github.io/permaculture-site-plan/> (GitHub
+Pages, source = `main` / `/docs`). V1 covers Home, Climate, Sun & Solar, Wind, and
+Flood & Hazard. Internal links must stay **relative** (`climate.html`, not
+`/climate.html`) — this is a project-scoped Pages site, not a domain root, so a
+root-absolute link 404s.
+
+Plain HTML/CSS, no build step, no JS framework —
 matches the `.viz-root` visual pattern from `pdc-pro-2026`'s data-viz reports (light/dark
 aware, inline SVG, self-contained). `docs/.nojekyll` disables GitHub's default Jekyll
 processing so files are served exactly as committed.
