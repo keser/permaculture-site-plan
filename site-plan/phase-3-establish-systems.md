@@ -5,7 +5,7 @@ Put in place the time-sensitive, low-maintenance systems (composting, cropping, 
 | ID | Task | Description | Depends On | Status | Source |
 |---|---|---|---|---|---|
 | S1 | Hot composting system | Set up an active/hot composting system for fast-turnaround organic waste. Sited in the NW corner (the winter-wind-exposed quadrant — see [site-profile.md](site-profile.md#wind); fine for compost); clearing the spot and building it out the weekend of 2026-09-05. Non-chippable woody debris gets composted here or buried in raised beds. | R2, R4 | In Progress | Lesson 2 interview |
-| S2 | Cold/slow composting system | Set up a secondary, slower cold composting system. Must stay visually clean and organized — not an eyesore. | — | Yet to Begin | Lesson 2 interview |
+| S2 | Cold/slow composting system | Set up a secondary, slower cold composting system. Built from the existing large brush pile in Zone 5: spray it for poison ivy first (R1), shred the dried top layer (R4), compact the pile down into one starter pile, then enclose it in a 3-bin staked-fence structure to keep it visually clean and organized — not an eyesore. | — | In Progress | Lesson 2 interview |
 | S3 | Forage crops | Establish forage crop plantings as part of low-maintenance food systems. | — | Yet to Begin | Lesson 2 interview |
 | S4 | Winter cover crops | Plant winter cover crops to protect and build soil in the off-season. | — | Yet to Begin | Lesson 2 interview |
 | S5 | Pollard willow row (raw material barrier) | Plant a pollard willow row as both a raw-material crop and a visual barrier/screen. | — | Yet to Begin | Lesson 2 interview |
@@ -20,3 +20,4 @@ Put in place the time-sensitive, low-maintenance systems (composting, cropping, 
 - Removed **S9 (Barn with mancave/tinkering space)** — Dad's barn mention in the Lesson 2 interview was part of an "if anything were possible" hypothetical that also included moving the house, which is off the table. Not part of the plan.
 - **S6** now depends on DS1 (Design phase) rather than the old shed task directly — the shed's design is meant to account for these other storage needs at the same time, not after the fact.
 - **2026-09-03:** S1 started ahead of the rest of Phase 3 — hot compost is needed now to absorb clearing debris that can't be chipped. Sited in the NW corner. See [progress-log.md](progress-log.md).
+- **2026-09-05:** S2 also underway, ahead of plan for the same reason as S1 — the Zone 5 brush pile needed managing regardless. See [progress-log.md](progress-log.md).

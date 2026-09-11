@@ -29,6 +29,28 @@ why the plan changed. Newest entry first.
   standalone fenced perimeter. It does **not** need to reuse the old dog kennel as that
   perimeter's back fence.
 
+### Follow-up detail (same day, 2026-09-11)
+
+- **The Zone 5 compost pile is S2, not a new system (S2):** there's already a large brush
+  pile there. The plan: spray it for poison ivy first (done — R1), shred the dried top
+  layer, compact the pile down into one starter pile, then enclose it in a 3-bin
+  staked-fence structure to keep it organized. Answers the open question from the last
+  entry about where "new compost systems" in Zone 5 referred to. S2 moved to In Progress.
+- **Correction on R21 — no air-layering happened yet.** Despite the 2026-09-03 plan,
+  neither the white cedar nor the Rose of Sharon got air-layered this visit. What
+  actually happened: the **cedar was pruned** (cuttings set aside to chip once dry, not
+  propagated) and **all but one lilac bush was pruned**, ahead of air-layering them next.
+  **R21's scope now includes the lilacs** — propagating them sources the stock for D3's
+  back-fence perennial garden ("grandma's lilacs") instead of buying new plants.
+- **Grapes (R20):** the two existing vines are likely **Catawba** — notably, they regrew
+  from being cut back to nothing, so they're vigorous stock to work with once relocated.
+- **4 round metal raised beds** (2×2×1 ft) bought and assembled — for grapes, hops, and
+  other vines (D4). These are the likely destination for the R20 grape relocation, though
+  not yet confirmed as such.
+- **Possible new D4 candidate:** a passion fruit vine currently growing on the balcony
+  that might go in the ground on-site — worth checking whether it's the same species as
+  the Purple Passionflower already saved in `inspiration/plants.md`.
+
 ### Looking ahead: on-site 2026-09-12 through 2026-09-18
 
 - Trim the staged maple/spruce branches and logs to shredder-ready size (no Y-branching,
