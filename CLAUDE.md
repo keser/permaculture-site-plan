@@ -99,7 +99,7 @@ processing so files are served exactly as committed.
 **Shared nav/footer, without a generator:** `docs/_partials/nav.html` and
 `.../footer.html` are the source of truth. Every page has
 `<!-- NAV:START -->…<!-- NAV:END -->` / `<!-- FOOTER:START -->…<!-- FOOTER:END -->`
-marker comments; a local script (`scripts/build-nav.py`) stamps the current partial
+marker comments; a local script (`scripts/build_nav.py`) stamps the current partial
 content between those markers. **Re-run it after editing nav/footer or adding a page,
 before committing** — there's no build step at serve time, so a stale stamp stays stale
 until someone runs the script again.
