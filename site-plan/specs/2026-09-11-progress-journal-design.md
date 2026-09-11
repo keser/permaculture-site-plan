@@ -117,7 +117,8 @@ must both return nothing after this change.
 Once this ships: whenever Andrew gives a real progress update (as narrated prose, the way
 he has been), the assistant updates `progress-log.md`/phase files as it already does, *and*
 drafts the corresponding curated journal entry in the same pass, applying the curation
-rules above — appended to `docs/journal.html` in the working tree. This is a standing
+rules above — inserting it at the top of `docs/journal.html`'s entry list in the working
+tree (the page is reverse-chronological — newest first). This is a standing
 behavior change, and the implementation plan's final task documents it in this repo's
 CLAUDE.md (alongside the existing "Generated Reports" / hand-authored-page conventions),
 so it isn't lost the next time this project picks back up in a fresh session.
