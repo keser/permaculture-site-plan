@@ -97,6 +97,13 @@ Flood & Hazard. Internal links must stay **relative** (`climate.html`, not
 `/climate.html`) — this is a project-scoped Pages site, not a domain root, so a
 root-absolute link 404s.
 
+**Hand-authored pages (not ported) need `body { margin: 0; }` explicitly.** Ported reports
+already carry this in their own `<style>` block; a hand-authored page (like `index.html`,
+`sun-solar.html`) that omits it gets a visible white border from the browser's default
+body margin — `.viz-root`'s own background doesn't reach the viewport edge. Fixed once
+already (2026-09-11) on `index.html`/`sun-solar.html`; include it from the start on any
+new hand-authored page (e.g. a future Zones & Design page).
+
 Plain HTML/CSS, no build step, no JS framework —
 matches the `.viz-root` visual pattern from `pdc-pro-2026`'s data-viz reports (light/dark
 aware, inline SVG, self-contained). `docs/.nojekyll` disables GitHub's default Jekyll
