@@ -1,14 +1,13 @@
 # Plant Inspiration
 
-Running catalog of plants to consider adding to the landscape. Drop a URL in as you find
-it — sort or annotate later, doesn't need to be tidy going in.
+Running catalog of **new** species to consider adding to the landscape (D1–D5) — not a
+catalog of what's already on site. Existing species are tracked separately via the Seek
+app and logged in the Lesson 8 species inventory (`pdc-pro-2026/lesson-08-gardens-animals`).
+Drop a URL in as you find it — sort or annotate later, doesn't need to be tidy going in.
 
 ## Uncategorized
 
-Doesn't fit the D1–D4 buckets below cleanly (fern) — flag if you want a dedicated section
-for these instead:
-
-- [Eastern Marsh Fern](https://directnativeplants.com/product/eastern-marsh-fern/)
+- 
 
 ## Native trees & shrubs (D1)
 
@@ -37,3 +36,10 @@ for these instead:
 - [Purple Passionflower](https://directnativeplants.com/product/purple-passionflower/) — already
   owned, currently potted in Hudson County, NJ; candidate to move into the ground at Lot 86
   (one of the new raised beds) where it could overwinter.
+
+## Ferns & groundcover (D4/D5)
+
+Ferns already exist on site (see the Seek/Lesson 8 inventory) — this section is for new
+cultivars to add alongside them, not the existing ones.
+
+- [Eastern Marsh Fern](https://directnativeplants.com/product/eastern-marsh-fern/)
