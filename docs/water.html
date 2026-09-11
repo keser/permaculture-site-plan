@@ -32,8 +32,6 @@
   .t{font-size:15.5px;font-weight:600}
   .d{font-size:12.5px;color:var(--text-secondary);line-height:1.5;margin:0 0 10px}
   .foot{display:flex;align-items:center;gap:8px}
-  .tag{font-size:11px;color:var(--text-secondary);background:var(--badge-bg);
-    border:1px solid var(--border);border-radius:5px;padding:3px 8px}
   .file{font-size:11px;color:var(--text-muted)}
   .open{font-size:11.5px;color:var(--link);margin-left:auto;font-weight:600}
   .refs{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-secondary);line-height:1.7}
@@ -102,21 +100,21 @@
 (function(){
   const CARDS=[
     {f:"precipitation-by-month.html", img:"assets/thumb-precipitation-by-month.png", t:"Precipitation by Month",
-     d:"12-month precipitation bars, monthly mean line, and the peak garden-ET window.", slide:"p. 62"},
+     d:"12-month precipitation bars, monthly mean line, and the peak garden-ET window."},
     {f:"runoff-by-surface.html", img:"assets/thumb-runoff-by-surface.png", t:"Runoff by Surface",
-     d:"Area vs. annual runoff for every surface, plus the “share flip” — permeable is 87% of the lot's area but only 53% of its runoff.", slide:"p. 63–66 · SWOT"},
+     d:"Area vs. annual runoff for every surface, plus the “share flip” — permeable is 87% of the lot's area but only 53% of its runoff."},
     {f:"water-balance.html", img:"assets/thumb-water-balance.png", t:"Site Water Balance",
-     d:"Sankey — 508,000 gal/yr of rain → ~75% infiltration/ET, ~25% runoff → hard vs. permeable → storm drains.", slide:"overview · SWOT"},
+     d:"Sankey — 508,000 gal/yr of rain → ~75% infiltration/ET, ~25% runoff → hard vs. permeable → storm drains."},
     {f:"elevation-sections.html", img:"assets/thumb-elevation-sections.png", t:"Elevation Cross-Sections",
-     d:"Two DEM profiles: along the lot (gentle ~1% grade) and across it (west ridge 119 ft → lot → east low 90 ft).", slide:"p. 56–59"},
+     d:"Two DEM profiles: along the lot (gentle ~1% grade) and across it (west ridge 119 ft → lot → east low 90 ft)."},
     {f:"site-flow-schematic.html", img:"assets/thumb-site-flow-schematic.png", t:"Site Water-Flow Schematic",
-     d:"Plan-view drafting guide — divide, contours, flow in from the west, across to the SE corner, out to the street inlets. Numbered legend.", slide:"p. 61 + p. 59 (map starter)"},
+     d:"Plan-view drafting guide — divide, contours, flow in from the west, across to the SE corner, out to the street inlets. Numbered legend."},
     {f:"design-storm-frequency.html", img:"assets/thumb-design-storm-frequency.png", t:"Design-Storm Frequency",
-     d:"NOAA Atlas 14 depth-frequency curve with the 1955 state record and the 2024 flood marked; 2-yr and 100-yr callouts.", slide:"p. 54"},
+     d:"NOAA Atlas 14 depth-frequency curve with the 1955 state record and the 2024 flood marked; 2-yr and 100-yr callouts."},
     {f:"macro-watershed-scale.html", img:"assets/thumb-macro-watershed-scale.png", t:"Macro Watershed",
-     d:"Nested-unit staircase (11,260 → 51.5 sq mi → 0.43 acre) and a stylized Connecticut locator map with the site dot.", slide:"p. 58 (map starter)"},
+     d:"Nested-unit staircase (11,260 → 51.5 sq mi → 0.43 acre) and a stylized Connecticut locator map with the site dot."},
     {f:"water-use-by-season.html", t:"Household Water Use by Season",
-     d:"Metered water bills broken into a seasonal bar chart — winter baseline vs. the summer outdoor-use bump.", slide:"Supporting Data"}
+     d:"Metered water bills broken into a seasonal bar chart — winter baseline vs. the summer outdoor-use bump."}
   ];
   const grid=document.getElementById("grid");
   CARDS.forEach((c,i)=>{
@@ -127,7 +125,7 @@
       '<div class="body">'+
         '<div class="row1"><span class="n">'+String(i+1).padStart(2,"0")+'</span><span class="t">'+c.t+'</span></div>'+
         '<p class="d">'+c.d+'</p>'+
-        '<div class="foot"><span class="tag">'+c.slide+'</span><span class="file">'+c.f+'</span><span class="open">open →</span></div>'+
+        '<div class="foot"><span class="file">'+c.f+'</span><span class="open">open →</span></div>'+
       '</div>';
     grid.appendChild(a);
   });
