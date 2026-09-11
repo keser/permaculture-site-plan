@@ -130,3 +130,25 @@ file is ever re-ported from that source, the account number must be stripped aga
 search for the specific line patterns: a body-text mention near "four consecutive bills"
 and the "Source:" citation line (the account number in the private `pdc-pro-2026` repo is
 the one to search for and remove).
+
+### Progress Journal
+
+`docs/journal.html` is a different kind of page from the reports above: a curated, first-person,
+reverse-chronological narrative of real on-site work, rather than a topic-based data report. It's
+sourced from `site-plan/progress-log.md`, but it's a deliberate rewrite, not a port — task codes
+(R1, S2, D4, etc.), phase-file cross-references, and internal plan-revision bookkeeping never appear
+in it; the source's own corrections-to-itself aren't narrated, their corrected facts are just folded
+in silently.
+
+**Ongoing workflow:** whenever Andrew gives a real progress update, update `progress-log.md` /
+phase files as usual, *and* draft the corresponding curated journal entry in the same pass, appended
+to `docs/journal.html`. Apply the curation rules above every time — this isn't a one-time backfill.
+
+**Privacy rule specific to this page:** never publish a forward-looking date range that signals when
+the property will be occupied or empty (e.g. "on-site Sept 12–18"). Past work-dates are fine. A
+dateless "what's next" beat is fine. This is separate from — and doesn't relax — the site's existing
+address/location policy above.
+
+Drafting a new entry into the working tree doesn't skip this repo's normal confirm-before-push
+convention — committing and pushing the update still gets confirmed with Andrew first, same as any
+other change.
