@@ -10,16 +10,20 @@ demonstrate the technical design approach as it's built.
 
 ## Privacy
 
-Public docs in this repo never state the exact street address or parcel
-number/lot number. Refer to the property generically (e.g. "a 0.43-acre
-residential lot in the Portland, CT area"). Exact parcel records (survey
-PDFs, parcel spreadsheets) are never stored in this repo — they live in a
-private iCloud folder instead.
+**Location is public.** As of 2026-09-11, the exact street address, lot number, and
+coordinates may appear in this repo. Rationale (Andrew): this information is publicly
+discoverable regardless of what this repo does, and the goal is a reusable pattern for
+generating this kind of detailed site-profile reporting for other project sites in the
+future — which would need the same location data every time. (Prior to 2026-09-11, this
+repo kept location generic; older commits/docs reflecting that are not being scrubbed.)
 
-Neighbors and other private third parties are never named — refer to them
-by role ("the adjacent neighbors"), not by name. (The two long-term
-stakeholders, the owner and his father, are referred to by role
-throughout.)
+Exact parcel records (survey PDFs, parcel spreadsheets) still aren't stored in this repo
+— they live in a private iCloud folder instead. This is a media-size/repo-hygiene
+convention, not a privacy one.
+
+**People are still private.** Neighbors and other private third parties are never named
+— refer to them by role ("the adjacent neighbors"), not by name. (The two long-term
+stakeholders, the owner and his father, are referred to by role throughout.)
 
 ## Workspace Structure
 
@@ -76,5 +80,7 @@ Plain GitHub Issues, no Projects board. Labels: `task`, `dad-request`,
 
 ## Deferred Decisions
 
-- Publishing engine for GitHub Pages (Jekyll vs. Docusaurus) — not yet
-  chosen. The folder structure above is generator-agnostic.
+- ~~Publishing engine for GitHub Pages (Jekyll vs. Docusaurus) — not yet chosen.~~
+  Decided 2026-09-11: **plain static HTML, no generator.** Matches the `.viz-root`
+  report pattern already in use (self-contained, no build step); GitHub Pages serves
+  the folder as-is. See the site-profile microsite design doc in `docs/superpowers/specs/`.

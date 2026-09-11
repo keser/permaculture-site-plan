@@ -6,8 +6,9 @@ bioclimatic design study run against local weather data, and sector research ori
 a course assignment, rewritten here as project knowledge rather than left duplicated across the
 two.
 
-Per this repo's privacy convention, no exact address or coordinates appear below — only
-city/region-level description.
+Written before the 2026-09-11 privacy policy change (see CLAUDE.md) — exact address and
+coordinates are now permitted in this repo, but this file hasn't been updated with them
+yet; still region-level description below pending that pass.
 
 ## Location & Climate Classification
 
