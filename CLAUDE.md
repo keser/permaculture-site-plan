@@ -114,3 +114,12 @@ Content is ported from `pdc-pro-2026`'s report HTML (see that repo's own CLAUDE.
 the source list) — copied and adapted here, not symlinked or generated, per the
 Related Repo convention below. Built in phases; see `site-plan/specs/` for each phase's
 design doc.
+
+**Redacted account number in `docs/water-use-by-season.html`:** the upstream source
+(`pdc-pro-2026/lesson-05-water/assets/water-use-by-season.html`) still contains a real
+water-utility account number, redacted here per an explicit human decision. **Don't quote
+the number itself in this repo — that would republish exactly what was redacted.** If this
+file is ever re-ported from that source, the account number must be stripped again —
+search for the specific line patterns: a body-text mention near "four consecutive bills"
+and the "Source:" citation line (the account number in the private `pdc-pro-2026` repo is
+the one to search for and remove).

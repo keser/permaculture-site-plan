@@ -50,6 +50,14 @@ here (not upstream in `pdc-pro-2026` — out of scope for this repo to touch tha
 Exact address/coordinates expected and fine. Check each ported page + the hub for any
 third-party name (unlikely — data/chart reports, same genre as V1's sources).
 
+One redaction made: `water-use-by-season.html`'s source data included a real Town of
+Portland water-utility account number, present in the subhead's "four consecutive bills"
+mention and in the "Source:" citation line. Stripped from the ported `docs/` copy on the
+grounds that an account number is identifying/sensitive in a way an address alone isn't
+(the number itself isn't repeated here — see the note in this repo's `CLAUDE.md` for why);
+the upstream `pdc-pro-2026` source file still has it and always will, so a future re-port
+of this file needs to redact it again.
+
 ## Relative links (the V1 lesson)
 
 Every internal link — in the 8 ported reports (none expected, they're standalone), the hub's

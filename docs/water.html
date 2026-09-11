@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Lesson 5 — Water · Visual Assets</title>
+<style>
+  .viz-root{color-scheme:light;
+    --page:#f9f9f7;--surface-1:#fcfcfb;--text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#898781;
+    --border:rgba(11,11,11,.12);--badge-bg:#eef0ea;--accent:#e07b39;--link:#2a78d6;--thumb-bg:#0d0d0d;}
+  @media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .viz-root{color-scheme:dark;
+    --page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#898781;
+    --border:rgba(255,255,255,.14);--badge-bg:#23261f;--accent:#e8935a;--link:#86b6ef;--thumb-bg:#0d0d0d;}}
+  :root[data-theme="dark"] .viz-root{color-scheme:dark;
+    --page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#898781;
+    --border:rgba(255,255,255,.14);--badge-bg:#23261f;--accent:#e8935a;--link:#86b6ef;--thumb-bg:#0d0d0d;}
+  *{box-sizing:border-box}body{margin:0}
+  .viz-root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--page);color:var(--text-primary);min-height:100vh;padding:36px 22px 60px}
+  .wrap{max-width:1040px;margin:0 auto}
+  h1{font-size:23px;font-weight:600;margin:0 0 6px}
+  .subhead{color:var(--text-secondary);font-size:14px;line-height:1.55;margin:0 0 8px}
+  .meta{color:var(--text-muted);font-size:12.5px;margin:0 0 26px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media (max-width:780px){.grid{grid-template-columns:1fr}}
+  .card{display:flex;flex-direction:column;background:var(--surface-1);border:1px solid var(--border);
+    border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .12s,transform .12s}
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .thumb{background:var(--thumb-bg);border-bottom:1px solid var(--border);line-height:0}
+  .thumb img{width:100%;height:auto;display:block}
+  .body{padding:14px 16px 16px}
+  .row1{display:flex;align-items:baseline;gap:9px;margin-bottom:4px}
+  .n{font-size:12px;font-weight:700;color:var(--accent)}
+  .t{font-size:15.5px;font-weight:600}
+  .d{font-size:12.5px;color:var(--text-secondary);line-height:1.5;margin:0 0 10px}
+  .foot{display:flex;align-items:center;gap:8px}
+  .tag{font-size:11px;color:var(--text-secondary);background:var(--badge-bg);
+    border:1px solid var(--border);border-radius:5px;padding:3px 8px}
+  .file{font-size:11px;color:var(--text-muted)}
+  .open{font-size:11.5px;color:var(--link);margin-left:auto;font-weight:600}
+  .refs{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--text-secondary);line-height:1.7}
+  .refs b{color:var(--text-primary)}
+  .refs code{font-size:11.5px}
+</style>
+</head>
+<body>
+<!-- NAV:START -->
+<style>
+  .site-nav {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 14px 20px;
+    background: #fcfcfb; border-bottom: 1px solid rgba(11,11,11,0.10);
+  }
+  .site-nav__brand { font-weight: 600; font-size: 14px; color: #0b0b0b; text-decoration: none; }
+  .site-nav__links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .site-nav__links a { font-size: 13px; color: #52514e; text-decoration: none; }
+  .site-nav__links a:hover { color: #0b0b0b; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-nav { background: #1a1a19; border-bottom-color: rgba(255,255,255,0.10); }
+    :root:not([data-theme="light"]) .site-nav__brand { color: #ffffff; }
+    :root:not([data-theme="light"]) .site-nav__links a { color: #c3c2b7; }
+    :root:not([data-theme="light"]) .site-nav__links a:hover { color: #ffffff; }
+  }
+  :root[data-theme="dark"] .site-nav { background: #1a1a19; border-bottom-color: rgba(255,255,255,0.10); }
+  :root[data-theme="dark"] .site-nav__brand { color: #ffffff; }
+  :root[data-theme="dark"] .site-nav__links a { color: #c3c2b7; }
+  :root[data-theme="dark"] .site-nav__links a:hover { color: #ffffff; }
+</style>
+<nav class="site-nav">
+  <a class="site-nav__brand" href="index.html">Lot #86 — Site Profile</a>
+  <div class="site-nav__links">
+    <a href="climate.html">Climate</a>
+    <a href="water.html">Water</a>
+    <a href="sun-solar.html">Sun &amp; Solar</a>
+    <a href="wind.html">Wind</a>
+    <a href="flood-hazard.html">Flood &amp; Hazard</a>
+  </div>
+</nav>
+<!-- NAV:END -->
+<div class="viz-root"><div class="wrap">
+  <h1>Lesson 5 — Water · Visual Assets</h1>
+  <p class="subhead">Charts and schematics for the PDC&nbsp;Pro Lesson&nbsp;5 slides
+    (58&nbsp;Freestone&nbsp;Avenue, Portland,&nbsp;CT). Each is a self-contained page — open it and
+    screenshot the panel into Figma. Click any card to open the full chart.</p>
+  <p class="meta">Data behind every chart lives in <code>../work/</code>; each page footer cites its own source.</p>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="refs">
+    <b>Written deliverables</b> (Markdown, in <code>../work/</code>):
+    <code>site-water-survey.md</code> · <code>watersheds-water-flow.md</code> ·
+    <code>rainwater-harvesting-analysis.md</code> · <code>water-swot.md</code><br>
+    <b>Source drawing:</b> <code>IMG_5635.jpeg</code> — 1996 zoning-approved Partial Site Plan (1"&nbsp;=&nbsp;10').
+  </div>
+</div></div>
+
+<script>
+(function(){
+  const CARDS=[
+    {f:"precipitation-by-month.html", img:"assets/thumb-precipitation-by-month.png", t:"Precipitation by Month",
+     d:"12-month precipitation bars, monthly mean line, and the peak garden-ET window.", slide:"p. 62"},
+    {f:"runoff-by-surface.html", img:"assets/thumb-runoff-by-surface.png", t:"Runoff by Surface",
+     d:"Area vs. annual runoff for every surface, plus the “share flip” — permeable is 87% of the lot's area but only 53% of its runoff.", slide:"p. 63–66 · SWOT"},
+    {f:"water-balance.html", img:"assets/thumb-water-balance.png", t:"Site Water Balance",
+     d:"Sankey — 508,000 gal/yr of rain → ~75% infiltration/ET, ~25% runoff → hard vs. permeable → storm drains.", slide:"overview · SWOT"},
+    {f:"elevation-sections.html", img:"assets/thumb-elevation-sections.png", t:"Elevation Cross-Sections",
+     d:"Two DEM profiles: along the lot (gentle ~1% grade) and across it (west ridge 119 ft → lot → east low 90 ft).", slide:"p. 56–59"},
+    {f:"site-flow-schematic.html", img:"assets/thumb-site-flow-schematic.png", t:"Site Water-Flow Schematic",
+     d:"Plan-view drafting guide — divide, contours, flow in from the west, across to the SE corner, out to the street inlets. Numbered legend.", slide:"p. 61 + p. 59 (map starter)"},
+    {f:"design-storm-frequency.html", img:"assets/thumb-design-storm-frequency.png", t:"Design-Storm Frequency",
+     d:"NOAA Atlas 14 depth-frequency curve with the 1955 state record and the 2024 flood marked; 2-yr and 100-yr callouts.", slide:"p. 54"},
+    {f:"macro-watershed-scale.html", img:"assets/thumb-macro-watershed-scale.png", t:"Macro Watershed",
+     d:"Nested-unit staircase (11,260 → 51.5 sq mi → 0.43 acre) and a stylized Connecticut locator map with the site dot.", slide:"p. 58 (map starter)"},
+    {f:"water-use-by-season.html", t:"Household Water Use by Season",
+     d:"Metered water bills broken into a seasonal bar chart — winter baseline vs. the summer outdoor-use bump.", slide:"Supporting Data"}
+  ];
+  const grid=document.getElementById("grid");
+  CARDS.forEach((c,i)=>{
+    const a=document.createElement("a");
+    a.className="card"; a.href=c.f;
+    a.innerHTML=
+      (c.img ? '<div class="thumb"><img src="'+c.img+'" alt="'+c.t+' preview" loading="lazy"></div>' : '')+
+      '<div class="body">'+
+        '<div class="row1"><span class="n">'+String(i+1).padStart(2,"0")+'</span><span class="t">'+c.t+'</span></div>'+
+        '<p class="d">'+c.d+'</p>'+
+        '<div class="foot"><span class="tag">'+c.slide+'</span><span class="file">'+c.f+'</span><span class="open">open →</span></div>'+
+      '</div>';
+    grid.appendChild(a);
+  });
+})();
+</script>
+<!-- FOOTER:START -->
+<style>
+  .site-footer {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 20px; text-align: center;
+    font-size: 12px; color: #898781;
+  }
+  .site-footer a { color: #52514e; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-footer a { color: #c3c2b7; }
+  }
+  :root[data-theme="dark"] .site-footer a { color: #c3c2b7; }
+</style>
+<footer class="site-footer">
+  <p>Lot #86, 58 Freestone Avenue, Portland, CT 06480 — part of the
+    <a href="https://github.com/keser/permaculture-site-plan">permaculture-site-plan</a>
+    project. Data ported from pdc-pro-2026 coursework.</p>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Elevation Cross-Sections — 58 Freestone Avenue</title>
+<style>
+  .viz-root{color-scheme:light;
+    --page:#f9f9f7;--surface-1:#fcfcfb;--text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#898781;
+    --grid:#e1e0d9;--baseline:#c3c2b7;--border:rgba(11,11,11,.10);--badge-bg:#eef0ea;--accent:#e07b39;
+    --ground:#b8925f;--ground-fill:rgba(184,146,95,.22);--lot:rgba(85,152,231,.16);--lot-line:#2a78d6;--divide:#e07b39;}
+  @media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .viz-root{color-scheme:dark;
+    --page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#898781;
+    --grid:#2c2c2a;--baseline:#383835;--border:rgba(255,255,255,.10);--badge-bg:#23261f;--accent:#e8935a;
+    --ground:#c9a878;--ground-fill:rgba(201,168,120,.20);--lot:rgba(85,152,231,.20);--lot-line:#86b6ef;--divide:#e8935a;}}
+  :root[data-theme="dark"] .viz-root{color-scheme:dark;
+    --page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#898781;
+    --grid:#2c2c2a;--baseline:#383835;--border:rgba(255,255,255,.10);--badge-bg:#23261f;--accent:#e8935a;
+    --ground:#c9a878;--ground-fill:rgba(201,168,120,.20);--lot:rgba(85,152,231,.20);--lot-line:#86b6ef;--divide:#e8935a;}
+  *{box-sizing:border-box}body{margin:0}
+  .viz-root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--page);color:var(--text-primary);min-height:100vh;padding:32px 20px 48px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:21px;font-weight:600;margin:0 0 6px}
+  .subhead{color:var(--text-secondary);font-size:13.5px;line-height:1.5;margin:0 0 16px}
+  .panel{background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:16px 16px 12px;margin-bottom:16px}
+  .panel-title{font-size:15px;font-weight:600;margin:0 0 2px}
+  .panel-sub{font-size:12px;color:var(--text-muted);margin:0 0 8px}
+  svg.chart{width:100%;height:auto;display:block;overflow:visible}
+  .axt{fill:var(--text-muted);font-size:10px}
+  .gl{stroke:var(--grid);stroke-width:1}
+  .note{fill:var(--text-secondary);font-size:10.5px}
+  .note-b{fill:var(--text-primary);font-size:10.5px;font-weight:600}
+  .src{font-size:11.5px;color:var(--text-muted);margin:8px 2px 0}
+</style>
+</head>
+<body>
+<!-- NAV:START -->
+<style>
+  .site-nav {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 14px 20px;
+    background: #fcfcfb; border-bottom: 1px solid rgba(11,11,11,0.10);
+  }
+  .site-nav__brand { font-weight: 600; font-size: 14px; color: #0b0b0b; text-decoration: none; }
+  .site-nav__links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .site-nav__links a { font-size: 13px; color: #52514e; text-decoration: none; }
+  .site-nav__links a:hover { color: #0b0b0b; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-nav { background: #1a1a19; border-bottom-color: rgba(255,255,255,0.10); }
+    :root:not([data-theme="light"]) .site-nav__brand { color: #ffffff; }
+    :root:not([data-theme="light"]) .site-nav__links a { color: #c3c2b7; }
+    :root:not([data-theme="light"]) .site-nav__links a:hover { color: #ffffff; }
+  }
+  :root[data-theme="dark"] .site-nav { background: #1a1a19; border-bottom-color: rgba(255,255,255,0.10); }
+  :root[data-theme="dark"] .site-nav__brand { color: #ffffff; }
+  :root[data-theme="dark"] .site-nav__links a { color: #c3c2b7; }
+  :root[data-theme="dark"] .site-nav__links a:hover { color: #ffffff; }
+</style>
+<nav class="site-nav">
+  <a class="site-nav__brand" href="index.html">Lot #86 — Site Profile</a>
+  <div class="site-nav__links">
+    <a href="climate.html">Climate</a>
+    <a href="water.html">Water</a>
+    <a href="sun-solar.html">Sun &amp; Solar</a>
+    <a href="wind.html">Wind</a>
+    <a href="flood-hazard.html">Flood &amp; Hazard</a>
+  </div>
+</nav>
+<!-- NAV:END -->
+<div class="viz-root"><div class="wrap">
+  <h1>Elevation Cross-Sections — 58&nbsp;Freestone&nbsp;Avenue, Portland,&nbsp;CT</h1>
+  <p class="subhead">Ground profiles through the lot, from the USGS 3DEP 1-meter DEM (NAVD88 feet).
+    Vertical scale is exaggerated to make the slope readable. Two cuts: <b>along</b> the lot
+    (street&nbsp;→&nbsp;back) and <b>across</b> it (west ridge&nbsp;→&nbsp;east low).</p>
+
+  <div class="panel">
+    <div class="panel-title">Section A — along the lot, Freestone&nbsp;Ave (S) → back (N)</div>
+    <div class="panel-sub">~9× vertical exaggeration · the lot rises ~6&nbsp;ft over ~550&nbsp;ft ≈ 1% — imperceptible on the ground; the street end is the low end</div>
+    <svg class="chart" id="secA" viewBox="0 0 820 210" role="img" aria-label="Elevation profile along the lot centerline: 102 feet at the street rising gently to about 108 feet at the back."></svg>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Section B — across the lot at mid-length, west → east</div>
+    <div class="panel-sub">~5× vertical exaggeration · a ridge crest ~240&nbsp;ft west (119&nbsp;ft) is the drainage divide; ground falls east past the lot to a ~90&nbsp;ft low</div>
+    <svg class="chart" id="secB" viewBox="0 0 820 250" role="img" aria-label="Elevation profile across the lot: ridge crest 119 feet to the west, gentle fall to the lot at 105 to 108 feet, then a steep drop east to about 91 feet."></svg>
+  </div>
+
+  <p class="src"><b>Source:</b> USGS 3DEP 1-m DEM sampled Aug&nbsp;2026 (National Map ImageServer);
+    cross-checked against USGS EPQS. Full transects: <code>lesson-05-water/work/watersheds-water-flow.md</code>.</p>
+</div></div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const txt=(p,s,a,cls)=>{const t=el("text",Object.assign({class:cls||"note"},a));t.textContent=s;p.appendChild(t);return t;};
+
+  function profile(svg, opts){
+    const {pts, x0,x1, y0,y1, xmin,xmax, ymin,ymax, xticks, yticks, bands=[], marks=[], vlabel} = opts;
+    const X = v => x0 + (v-xmin)/(xmax-xmin)*(x1-x0);
+    const Y = v => y0 + (v-ymin)/(ymax-ymin)*(y1-y0);   // y1<y0 (inverted handled by caller)
+    // y gridlines + labels
+    yticks.forEach(t=>{
+      svg.appendChild(el("line",{class:"gl",x1:x0,y1:Y(t),x2:x1,y2:Y(t)}));
+      txt(svg,t+" ft",{x:x0-8,y:Y(t)+3.5,"text-anchor":"end",class:"axt"});
+    });
+    // x ticks
+    xticks.forEach(t=>txt(svg,t.l,{x:X(t.v),y:y0+16,"text-anchor":"middle",class:"axt"}));
+    // shaded bands (vertical)
+    bands.forEach(b=>{
+      svg.appendChild(el("rect",{x:X(b.a),y:Math.min(Y(ymax),Y(ymin)),width:X(b.b)-X(b.a),
+        height:Math.abs(Y(ymax)-Y(ymin)),fill:b.fill||"var(--lot)"}));
+      if(b.label) txt(svg,b.label,{x:(X(b.a)+X(b.b))/2,y:Y(ymax)+13,"text-anchor":"middle",class:"note-b",fill:"var(--lot-line)"});
+    });
+    // ground fill + line
+    let d="M "+X(pts[0][0])+" "+Y(ymin)+" ";
+    pts.forEach(p=>d+="L "+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)+" ");
+    d+="L "+X(pts[pts.length-1][0])+" "+Y(ymin)+" Z";
+    svg.appendChild(el("path",{d,fill:"var(--ground-fill)"}));
+    let dl="";
+    pts.forEach((p,i)=>dl+=(i?"L":"M")+" "+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)+" ");
+    svg.appendChild(el("path",{d:dl,fill:"none",stroke:"var(--ground)","stroke-width":2}));
+    // point markers
+    pts.forEach(p=>svg.appendChild(el("circle",{cx:X(p[0]),cy:Y(p[1]),r:1.6,fill:"var(--ground)"})));
+    // callout marks
+    marks.forEach(m=>{
+      const px=X(m.x), py=Y(m.y);
+      svg.appendChild(el("line",{x1:px,y1:py,x2:px,y2:py-m.dy,stroke:"var(--divide)","stroke-width":1,"stroke-dasharray":"3 2"}));
+      txt(svg,m.t,{x:px+(m.anchor==="end"?-4:4),y:py-m.dy-3,"text-anchor":m.anchor||"start",class:"note-b"});
+      if(m.t2) txt(svg,m.t2,{x:px+(m.anchor==="end"?-4:4),y:py-m.dy+9,"text-anchor":m.anchor||"start"});
+    });
+    if(vlabel) txt(svg,vlabel,{x:x1,y:y1+2,"text-anchor":"end",class:"axt"});
+  }
+
+  // ---- Section A ----
+  const A=[[0,102.4],[36,102.4],[73,103.1],[109,104.1],[146,103.4],[182,104.3],[219,105.1],
+           [255,105.6],[291,107.1],[328,107.7],[364,107.1],[401,106.6],[437,105.6],[474,107.4],
+           [510,107.8],[546,107.8]];
+  profile(document.getElementById("secA"),{
+    pts:A, x0:58,x1:790, y0:150,y1:22, xmin:0,xmax:546, ymin:100,ymax:110,
+    yticks:[100,102,104,106,108,110],
+    xticks:[{v:0,l:"Freestone Ave"},{v:150,l:"150 ft"},{v:300,l:"300 ft"},{v:450,l:"450 ft"},{v:546,l:"back"}],
+    bands:[{a:0,b:546,label:"the lot (sampled centerline)"}],
+    marks:[
+      {x:0,y:102.4,dy:40,t:"street end ≈102 ft",t2:"low end — outfall to storm drains",anchor:"start"},
+      {x:510,y:107.8,dy:22,t:"back ≈108 ft",anchor:"end"}
+    ]
+  });
+
+  // ---- Section B ----
+  const B=[[-360,117.8],[-240,119.4],[-120,114.4],[-23,108.6],[23,104.5],[120,95.7],[240,91.1],[360,90.8]];
+  profile(document.getElementById("secB"),{
+    pts:B, x0:58,x1:790, y0:200,y1:26, xmin:-360,xmax:360, ymin:88,ymax:122,
+    yticks:[90,95,100,105,110,115,120],
+    xticks:[{v:-360,l:"360 ft W"},{v:-180,l:"180 W"},{v:0,l:"lot"},{v:180,l:"180 E"},{v:360,l:"360 ft E"}],
+    bands:[{a:-23,b:23,label:"lot (~46 ft)"}],
+    marks:[
+      {x:-240,y:119.4,dy:18,t:"ridge crest ≈119 ft",t2:"drainage divide",anchor:"start"},
+      {x:120,y:95.7,dy:30,t:"steep fall east (~12%)",anchor:"start"},
+      {x:360,y:90.8,dy:14,t:"east low ≈91 ft",anchor:"end"}
+    ]
+  });
+})();
+</script>
+<!-- FOOTER:START -->
+<style>
+  .site-footer {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 20px; text-align: center;
+    font-size: 12px; color: #898781;
+  }
+  .site-footer a { color: #52514e; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-footer a { color: #c3c2b7; }
+  }
+  :root[data-theme="dark"] .site-footer a { color: #c3c2b7; }
+</style>
+<footer class="site-footer">
+  <p>Lot #86, 58 Freestone Avenue, Portland, CT 06480 — part of the
+    <a href="https://github.com/keser/permaculture-site-plan">permaculture-site-plan</a>
+    project. Data ported from pdc-pro-2026 coursework.</p>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>

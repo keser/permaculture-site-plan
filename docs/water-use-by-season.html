@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Household Water Use by Season — 58 Freestone Avenue</title>
+<style>
+  .viz-root{color-scheme:light;
+    --page:#f9f9f7;--surface-1:#fcfcfb;--text-primary:#0b0b0b;--text-secondary:#52514e;--text-muted:#898781;
+    --grid:#e1e0d9;--baseline:#c3c2b7;--border:rgba(11,11,11,.10);--badge-bg:#eef0ea;--accent:#e07b39;
+    --fall:#b8925f;--winter:#5598e7;--spring:#6f8f52;--summer:#d9a441;
+    --base:#2a2a28;--excess:rgba(224,123,57,.16);--excess-line:#e07b39;}
+  @media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])) .viz-root{color-scheme:dark;
+    --page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#898781;
+    --grid:#2c2c2a;--baseline:#383835;--border:rgba(255,255,255,.10);--badge-bg:#23261f;--accent:#e8935a;
+    --fall:#c9a878;--winter:#86b6ef;--spring:#8fae6f;--summer:#e6bd6a;
+    --base:#e6e5df;--excess:rgba(232,147,90,.18);--excess-line:#e8935a;}}
+  :root[data-theme="dark"] .viz-root{color-scheme:dark;
+    --page:#0d0d0d;--surface-1:#1a1a19;--text-primary:#fff;--text-secondary:#c3c2b7;--text-muted:#898781;
+    --grid:#2c2c2a;--baseline:#383835;--border:rgba(255,255,255,.10);--badge-bg:#23261f;--accent:#e8935a;
+    --fall:#c9a878;--winter:#86b6ef;--spring:#8fae6f;--summer:#e6bd6a;
+    --base:#e6e5df;--excess:rgba(232,147,90,.18);--excess-line:#e8935a;}
+  *{box-sizing:border-box}body{margin:0}
+  .viz-root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--page);color:var(--text-primary);min-height:100vh;padding:32px 20px 48px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:21px;font-weight:600;margin:0 0 6px}
+  .subhead{color:var(--text-secondary);font-size:13.5px;line-height:1.5;margin:0 0 14px}
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .badge{background:var(--badge-bg);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:12px;color:var(--text-secondary)}
+  .badge b{color:var(--text-primary);font-weight:600}
+  .panel{background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:16px 16px 12px}
+  svg.chart{width:100%;height:auto;display:block;overflow:visible}
+  .axt{fill:var(--text-muted);font-size:10px}
+  .axl{fill:var(--text-secondary);font-size:11px}
+  .gl{stroke:var(--grid);stroke-width:1}
+  .val{fill:var(--text-primary);font-size:10.5px;font-weight:600}
+  .seclbl{fill:var(--text-muted);font-size:10px;font-weight:700;letter-spacing:.03em}
+  .dot-lbl{fill:var(--text-primary);font-size:10.5px;font-weight:600}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--text-secondary);margin:4px 2px 0}
+  .sw{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:5px}
+  .note{background:var(--badge-bg);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:10px 12px;font-size:13px;line-height:1.55;margin:14px 0 0}
+  .note b{color:var(--text-primary)}
+  .src{font-size:11.5px;color:var(--text-muted);margin:12px 2px 0}
+</style>
+</head>
+<body>
+<!-- NAV:START -->
+<style>
+  .site-nav {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 14px 20px;
+    background: #fcfcfb; border-bottom: 1px solid rgba(11,11,11,0.10);
+  }
+  .site-nav__brand { font-weight: 600; font-size: 14px; color: #0b0b0b; text-decoration: none; }
+  .site-nav__links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .site-nav__links a { font-size: 13px; color: #52514e; text-decoration: none; }
+  .site-nav__links a:hover { color: #0b0b0b; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-nav { background: #1a1a19; border-bottom-color: rgba(255,255,255,0.10); }
+    :root:not([data-theme="light"]) .site-nav__brand { color: #ffffff; }
+    :root:not([data-theme="light"]) .site-nav__links a { color: #c3c2b7; }
+    :root:not([data-theme="light"]) .site-nav__links a:hover { color: #ffffff; }
+  }
+  :root[data-theme="dark"] .site-nav { background: #1a1a19; border-bottom-color: rgba(255,255,255,0.10); }
+  :root[data-theme="dark"] .site-nav__brand { color: #ffffff; }
+  :root[data-theme="dark"] .site-nav__links a { color: #c3c2b7; }
+  :root[data-theme="dark"] .site-nav__links a:hover { color: #ffffff; }
+</style>
+<nav class="site-nav">
+  <a class="site-nav__brand" href="index.html">Lot #86 — Site Profile</a>
+  <div class="site-nav__links">
+    <a href="climate.html">Climate</a>
+    <a href="water.html">Water</a>
+    <a href="sun-solar.html">Sun &amp; Solar</a>
+    <a href="wind.html">Wind</a>
+    <a href="flood-hazard.html">Flood &amp; Hazard</a>
+  </div>
+</nav>
+<!-- NAV:END -->
+<div class="viz-root"><div class="wrap">
+  <h1>Household Water Use by Season — 58&nbsp;Freestone&nbsp;Avenue, Portland,&nbsp;CT</h1>
+  <p class="subhead">Metered use per billing period, from four consecutive Town of Portland
+    bills with an unbroken meter trail Sep&nbsp;2024&nbsp;–&nbsp;Jun&nbsp;2026.
+    Bar width = days in the period; bar height = gallons per day. Two adults, no in-ground
+    irrigation.</p>
+
+  <div class="badge-row">
+    <span class="badge">Annual <b>≈46,000 gal/yr</b></span>
+    <span class="badge">Average <b>≈125 gal/day</b></span>
+    <span class="badge">Winter baseline <b>≈109 gal/day</b></span>
+    <span class="badge">Spring peak <b>160 gal/day</b></span>
+  </div>
+
+  <div class="panel">
+    <svg class="chart" viewBox="0 0 900 400" role="img"
+      aria-label="Bar chart of metered household water use per billing period from September 2024 to June 2026: about 117 gallons per day in fall, 109 in winter, 141 and 160 in spring, 133 in summer. A dashed line marks the 109 gallon per day winter baseline; the area above it in the growing-season bars is the outdoor use.">
+    </svg>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--winter)"></span>winter</span>
+      <span><span class="sw" style="background:var(--spring)"></span>spring</span>
+      <span><span class="sw" style="background:var(--summer)"></span>summer</span>
+      <span><span class="sw" style="background:var(--fall)"></span>fall</span>
+      <span><span class="sw" style="background:var(--excess-line)"></span>outdoor / growing-season use (above baseline)</span>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>The growing-season excess is outdoor use — and it's the size of the harvest prize.</b>
+    Use sits at a <b>~109&nbsp;gal/day</b> indoor baseline all winter, then climbs to
+    133–160&nbsp;gal/day from spring through summer. That <b>≈5,000–8,000&nbsp;gal/yr</b>
+    difference — hose watering, bed prep, pool top-off — is almost exactly the
+    <b>≈4,400&nbsp;gal/yr</b> that coop&nbsp;+&nbsp;shed roof barrels could harvest into
+    Zone&nbsp;3. Because Portland bills sewer on the same metered volume, offsetting it
+    trims both lines of the bill (~$0.017/gal).
+  </div>
+
+  <p class="src"><b>Source:</b> Town of Portland Water &amp; Sewer Departments,
+    bills dated 01/15/2025, 07/17/2025, 10/17/2025, 07/17/2026 (service periods 09/24/2024–06/16/2026).
+    Meter readings in cubic feet &times; 7.48 = gallons. Two periods span an un-imaged bill but the
+    prior/current meter reads chain continuously. Scans in <code>lesson-05-water/assets/</code>.</p>
+</div></div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const el=(n,a)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+  const txt=(p,s,a,cls)=>{const t=el("text",Object.assign({class:cls||"axt"},a));t.textContent=s;p.appendChild(t);return t;};
+  const svg=document.querySelector("svg.chart");
+
+  // period: startDay offset from Sep 24 2024, length in days, gal/day, season
+  const P=[
+    {s:0,   d:80,  g:117, k:"fall",   lbl:"Sep–Dec '24"},
+    {s:80,  d:102, g:109, k:"winter", lbl:"Dec '24–Mar '25"},
+    {s:182, d:79,  g:141, k:"spring", lbl:"Mar–Jun '25"},
+    {s:261, d:111, g:133, k:"summer", lbl:"Jun–Oct '25"},
+    {s:372, d:163, g:116, k:"fall",   lbl:"Oct '25–Mar '26"},
+    {s:535, d:95,  g:160, k:"spring", lbl:"Mar–Jun '26"}
+  ];
+  const col=k=>({fall:"var(--fall)",winter:"var(--winter)",spring:"var(--spring)",summer:"var(--summer)"}[k]);
+  const BASE=109;
+  const TOTALD=630, GMAX=180;
+  const x0=58,x1=858,y0=330,y1=30;
+  const X=day=>x0+day/TOTALD*(x1-x0);
+  const Y=g=>y0-g/GMAX*(y0-y1);
+
+  // y grid
+  for(let g=0;g<=GMAX;g+=30){
+    svg.appendChild(el("line",{class:"gl",x1:x0,y1:Y(g),x2:x1,y2:Y(g)}));
+    txt(svg,g,{x:x0-8,y:Y(g)+3.5,"text-anchor":"end"});
+  }
+  txt(svg,"gallons per day",{x:x0-8,y:y1-12,"text-anchor":"start",class:"axl"});
+
+  // x ticks — quarter marks
+  const ticks=[{day:7,l:"Oct '24"},{day:99,l:"Jan '25"},{day:189,l:"Apr '25"},{day:280,l:"Jul '25"},
+               {day:372,l:"Oct '25"},{day:464,l:"Jan '26"},{day:554,l:"Apr '26"}];
+  ticks.forEach(t=>{
+    svg.appendChild(el("line",{class:"gl",x1:X(t.day),y1:y0,x2:X(t.day),y2:y0+4}));
+    txt(svg,t.l,{x:X(t.day),y:y0+16,"text-anchor":"middle"});
+  });
+
+  // baseline + annual-average reference lines (drawn under the bars)
+  const AVG=125;
+  svg.appendChild(el("line",{x1:x0,y1:Y(AVG),x2:x1,y2:Y(AVG),stroke:"var(--text-muted)",
+    "stroke-width":1,"stroke-dasharray":"2 3"}));
+
+  // bars
+  P.forEach(p=>{
+    const bx=X(p.s), bw=X(p.s+p.d)-X(p.s), gap=3;
+    // base portion
+    const baseH=Y(Math.min(p.g,BASE));
+    svg.appendChild(el("rect",{x:bx+gap,y:baseH,width:bw-2*gap,height:y0-baseH,fill:col(p.k),rx:2,opacity:.92}));
+    // excess above baseline
+    if(p.g>BASE){
+      svg.appendChild(el("rect",{x:bx+gap,y:Y(p.g),width:bw-2*gap,height:Y(BASE)-Y(p.g),
+        fill:"var(--excess)",stroke:"var(--excess-line)","stroke-width":1,rx:2}));
+    }
+    txt(svg,p.g,{x:bx+bw/2,y:Y(p.g)-7,"text-anchor":"middle",class:"val"});
+    txt(svg,p.lbl,{x:bx+bw/2,y:y0+30,"text-anchor":"middle",class:"axt"});
+    txt(svg,p.d+" d",{x:bx+bw/2,y:y0+42,"text-anchor":"middle",class:"axt",opacity:.7});
+  });
+
+  // baseline line + labels (on top)
+  svg.appendChild(el("line",{x1:x0,y1:Y(BASE),x2:x1,y2:Y(BASE),stroke:"var(--base)",
+    "stroke-width":1.5,"stroke-dasharray":"6 4"}));
+  txt(svg,"winter baseline ≈ 109 gal/day (indoor only)",{x:x0+4,y:Y(BASE)+16,"text-anchor":"start",class:"dot-lbl"});
+  txt(svg,"annual avg ≈ 125",{x:x1,y:Y(AVG)-5,"text-anchor":"end",class:"axt"});
+})();
+</script>
+<!-- FOOTER:START -->
+<style>
+  .site-footer {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 20px; text-align: center;
+    font-size: 12px; color: #898781;
+  }
+  .site-footer a { color: #52514e; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .site-footer a { color: #c3c2b7; }
+  }
+  :root[data-theme="dark"] .site-footer a { color: #c3c2b7; }
+</style>
+<footer class="site-footer">
+  <p>Lot #86, 58 Freestone Avenue, Portland, CT 06480 — part of the
+    <a href="https://github.com/keser/permaculture-site-plan">permaculture-site-plan</a>
+    project. Data ported from pdc-pro-2026 coursework.</p>
+</footer>
+<!-- FOOTER:END -->
+</body>
+</html>
