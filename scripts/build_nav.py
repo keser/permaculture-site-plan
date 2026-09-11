@@ -14,12 +14,6 @@ import re
 from pathlib import Path
 
 DOCS = Path(__file__).resolve().parent.parent / "docs"
-PARTIALS = DOCS / "_partials"
-
-MARKERS = {
-    "NAV": PARTIALS / "nav.html",
-    "FOOTER": PARTIALS / "footer.html",
-}
 
 
 def stamp(html: str, name: str, partial_content: str) -> str:
@@ -33,14 +27,19 @@ def stamp(html: str, name: str, partial_content: str) -> str:
     )
 
 
-def build() -> list[Path]:
-    for partial_path in MARKERS.values():
+def build(docs_dir: Path = DOCS) -> list[Path]:
+    partials_dir = docs_dir / "_partials"
+    markers = {
+        "NAV": partials_dir / "nav.html",
+        "FOOTER": partials_dir / "footer.html",
+    }
+    for partial_path in markers.values():
         if not partial_path.exists():
             raise FileNotFoundError(f"missing partial: {partial_path}")
-    partial_contents = {name: path.read_text() for name, path in MARKERS.items()}
+    partial_contents = {name: path.read_text() for name, path in markers.items()}
 
     changed = []
-    for page in sorted(DOCS.glob("*.html")):
+    for page in sorted(docs_dir.glob("*.html")):
         original = page.read_text()
         updated = original
         for name, content in partial_contents.items():
