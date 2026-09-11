@@ -33,9 +33,11 @@ permaculture-site-plan/
 ├── site-plan/              — narrative docs, zones, sector analysis, phase plans
 │   ├── site-profile.md      — climate, solar, sector & passive-design reference
 │   ├── progress-log.md      — dated log of on-site work & plan revisions
+│   ├── specs/                — brainstorming-skill design docs (see below)
 │   ├── maps/                — exported Figma base maps
 │   └── sketches/             — iPad Pro scans, dated, raw
-└── inspiration/             — public inbox: links, images, references
+├── inspiration/             — public inbox: links, images, references
+└── docs/                    — the published site-profile microsite (GitHub Pages root)
 ```
 
 ## Media Convention
@@ -82,5 +84,27 @@ Plain GitHub Issues, no Projects board. Labels: `task`, `dad-request`,
 
 - ~~Publishing engine for GitHub Pages (Jekyll vs. Docusaurus) — not yet chosen.~~
   Decided 2026-09-11: **plain static HTML, no generator.** Matches the `.viz-root`
-  report pattern already in use (self-contained, no build step); GitHub Pages serves
-  the folder as-is. See the site-profile microsite design doc in `docs/superpowers/specs/`.
+  report pattern already in use (self-contained, no build step). GitHub Pages serves
+  `docs/` on `main` as-is — note this means design-doc specs live at `site-plan/specs/`
+  instead of the brainstorming skill's usual `docs/superpowers/specs/`, since `docs/`
+  is now the public site root, not a docs folder.
+
+## Site Microsite (`docs/`)
+
+Published at GitHub Pages once enabled. Plain HTML/CSS, no build step, no JS framework —
+matches the `.viz-root` visual pattern from `pdc-pro-2026`'s data-viz reports (light/dark
+aware, inline SVG, self-contained). `docs/.nojekyll` disables GitHub's default Jekyll
+processing so files are served exactly as committed.
+
+**Shared nav/footer, without a generator:** `docs/_partials/nav.html` and
+`.../footer.html` are the source of truth. Every page has
+`<!-- NAV:START -->…<!-- NAV:END -->` / `<!-- FOOTER:START -->…<!-- FOOTER:END -->`
+marker comments; a local script (`scripts/build-nav.py`) stamps the current partial
+content between those markers. **Re-run it after editing nav/footer or adding a page,
+before committing** — there's no build step at serve time, so a stale stamp stays stale
+until someone runs the script again.
+
+Content is ported from `pdc-pro-2026`'s report HTML (see that repo's own CLAUDE.md for
+the source list) — copied and adapted here, not symlinked or generated, per the
+Related Repo convention below. Built in phases; see `site-plan/specs/` for each phase's
+design doc.
