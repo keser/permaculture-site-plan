@@ -57,6 +57,12 @@
   .nav-card h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text-primary); }
   .nav-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
   .divider { height: 1px; background: var(--grid); margin: 8px 0 32px; border: none; }
+  .history-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .history-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .history-card img { width: 100%; height: auto; display: block; }
+  .history-card .body { padding: 14px 16px 16px; }
+  .history-card h3 { font-size: 14px; font-weight: 600; margin: 0 0 6px; color: var(--text-primary); }
+  .history-card p { font-size: 12.5px; color: var(--text-secondary); margin: 0; line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -145,6 +151,31 @@
         <h3>Zones &amp; Design</h3>
         <p>Current permaculture zones, microclimates, and the design brainstorm for their future.</p>
       </a>
+    </div>
+
+    <h2 class="section-head">Site History</h2>
+    <div class="history-grid">
+      <div class="history-card">
+        <img src="assets/site-history-city.jpg" alt="Aerial view of Portland, CT with the design site marked, Google Earth screenshot, June 2026" width="1200" height="675">
+        <div class="body">
+          <h3>A Brief History of Portland, CT</h3>
+          <p>Lot #86 is centrally located within the Town of Portland, Connecticut. The town was first settled 8&ndash;10K years ago by Wangunk peoples (roughly translates to big-bend) where the river played a huge role in their daily lives that centered around hunting, fishing and growing crops. European colonizers first settled the area in the 1650s (English stonecutters) who developed the economy around the abundant brownstone in the area &mdash; the quarries' close proximity to the river made transport and trade much more affordable than existing options, which helped the local economy thrive. Other businesses like ship building (for transporting stone) and animal husbandry (oxen and draft horses to haul stone) were also quite prevalent until other building materials became more favorable and affordable. The river's annual seasonal flooding also created soil perfect for growing tobacco, another thriving industry in town. In 1934, the quarries flooded after a major hurricane and largely sat unused for many years. In the 2000s the town purchased the quarries and developed them into the Brownstone Adventure Park, where visitors can enjoy the deepest freshwater scuba diving on the East Coast.</p>
+        </div>
+      </div>
+      <div class="history-card">
+        <img src="assets/site-history-neighborhood.jpg" alt="Aerial view of the neighborhood around the design site with the original undivided lot outlined, Google Earth screenshot, June 2026" width="1200" height="675">
+        <div class="body">
+          <h3>The Neighborhood</h3>
+          <p>Lot #86 is on Freestone Avenue, a street that gets its name from being the former dumping ground of byproduct from quarrying local brownstone. It is surrounded on all sides by Main Street, Waverly Avenue, Foley Road and Cross Street. Before the lot was subdivided by the previous owners, it spanned from Freestone Avenue to Foley Road (the curved road to the north east of the lot). The lot was divided into 3, and a second house was built on the property in back of Lot #86.</p>
+        </div>
+      </div>
+      <div class="history-card">
+        <img src="assets/site-history-1990.jpg" alt="Two side-by-side 1990 infrared aerial photographs: a wide regional view highlighting tree coverage, and a close view of the property when it had only turf grass and minimal plantings" width="1200" height="675">
+        <div class="body">
+          <h3>Historic Images (1990)</h3>
+          <p>Aerial infrared photograph from the 1990 Connecticut Department of Environmental Protection survey, where red areas highlight foliage and teal shows paved or unplanted surface area (source: CTDEP_CIR_12K_1990_0585, Keystone Aerial Surveys, Inc., Aug 1990, UConn/CTDEEP). At the time of the second photo, the property only had turf grass and minimal plantings &mdash; taken a year after my parents purchased the property but before they made any major changes to the landscape.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
