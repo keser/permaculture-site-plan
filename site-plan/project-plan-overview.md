@@ -71,7 +71,7 @@ clearing — runs independently; only C5 → DS1 and C3 → C1 remain.
 | D1 | Plant native trees & shrubs | Diversity over monocrop; fruit, nut, raw material, or habitat yield. | R1 | Yet to Begin |
 | D2 | Plant flowers for beauty & pollinators | Color, pollinator support, cut/dry flower varieties. | — | Yet to Begin |
 | D3 | Perennial garden along back fence | Lilacs (family sentimental) and hydrangeas, planned deliberately. Source lilac stock via air-layering (R21). | R17 | Yet to Begin |
-| D4 | Hops, grapes, blueberries | Productive perennial plantings with practical purpose. Idea: root blueberry cuttings instead of buying new stock. 4 round metal raised beds assembled 2026-09-05 for grapes/hops/vines. | — | In Progress |
+| D4 | Hops, grapes, blueberries | Productive perennial plantings with practical purpose. Idea: root blueberry cuttings instead of buying new stock. 4 round metal raised beds assembled 2026-09-05 for grapes/hops/vines, incl. a potted passionflower (currently NJ) that could overwinter here. | — | In Progress |
 | D5 | Clean up chicken/evergreen area for habitat use | Reduce clutter/rodent issues; add raised beds. | R2 | Yet to Begin |
 
 ## Design (Ongoing)

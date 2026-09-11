@@ -5,11 +5,10 @@ it — sort or annotate later, doesn't need to be tidy going in.
 
 ## Uncategorized
 
-Don't fit the D1–D4 buckets below cleanly (fern, vine) — flag if you want a dedicated
-section for these instead:
+Doesn't fit the D1–D4 buckets below cleanly (fern) — flag if you want a dedicated section
+for these instead:
 
 - [Eastern Marsh Fern](https://directnativeplants.com/product/eastern-marsh-fern/)
-- [Purple Passionflower](https://directnativeplants.com/product/purple-passionflower/)
 
 ## Native trees & shrubs (D1)
 
@@ -35,3 +34,6 @@ section for these instead:
 ## Productive perennials — hops, grapes, blueberries (D4)
 
 - [Lowbush Blueberry](https://directnativeplants.com/product/lowbush-blueberry/)
+- [Purple Passionflower](https://directnativeplants.com/product/purple-passionflower/) — already
+  owned, currently potted in Hudson County, NJ; candidate to move into the ground at Lot 86
+  (one of the new raised beds) where it could overwinter.
