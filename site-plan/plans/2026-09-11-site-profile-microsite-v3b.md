@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Every internal link relative, never root-absolute — `grep -rn 'href="/' docs/` and `grep -rn 'src="/' docs/` must both return nothing, every task.
-- All body text is reproduced verbatim from the source markdown — this is Andrew's own course analysis, not content to paraphrase, summarize, or "improve." Preserve capitalization/style choices from the source (e.g. the matrix tables are in caps in the source; keep them that way).
+- All body text is reproduced verbatim from the source markdown — this is Andrew's own course analysis, not content to paraphrase, summarize, or "improve." Wording, voice, and grammatical person are never altered; typo/agreement corrections are fine without individual flagging. **Superseded:** the matrix tables below are shown in sentence case, not the source's ALL CAPS — a deliberate call made while writing this plan's task content (all-caps is a slide-design artifact, not authorial style, and reads poorly on the web), not an oversight. The tasks' actual HTML is the source of truth for this; this line originally said to keep the caps and was wrong.
 - Images: `sips -Z 1200 -s format jpeg -s formatOptions 65 <source.png> --out <dest.jpg>` — this exact command, tested during spec-writing (produces 140–290KB files from 368KB–2.5MB sources).
 - `body { margin: 0; }` required in every new page's `<style>` block (V1's white-border lesson, documented in this repo's CLAUDE.md).
 - Exact address/coordinates permitted; third-party names never permitted (source content already clean — no name appears anywhere in the three markdown files).
@@ -391,7 +391,7 @@ Body content:
     <div class="photo-block">
       <img src="assets/zones-design/current-zones-strengths-1.jpg" alt="Zone 1 pool deck and Zone 5 back area photos">
       <p class="photo-caption"><b>Zone 1 pool deck</b> creates the perfect dark, moist, shaded habitat to store hardwood logs inoculated with mushrooms.</p>
-      <p class="photo-caption"><b>Zone 5 area</b> largely unused or maintained for years. After pruning this back we will be able to produce a yield of firewood, woody material to shred and mulch for groundcover. The mulberry tree is dying back, so most of its dead or dying branches will be buried or composted to improve soil health in other zones. Plan to coppice the maples to harvest the logs and use future sprouts as source of mulch.</p>
+      <p class="photo-caption"><b>Zone 5 area</b> largely unused or maintained for years. After pruning this back we will be able to produce a yield of firewood, woody material to shred and mulch for groundcover. The mulberry tree is dying back, so most of its dead or dying branches will be buried or composted to improve soil health in other zones. I plan to coppice the maples to harvest the logs and use future sprouts as source of mulch.</p>
       <p class="photo-credit">Photos by Andrew Keser, June &amp; August 2026.</p>
     </div>
     <div class="photo-block">
@@ -512,18 +512,18 @@ Body content:
     </div>
     <div class="qa-block">
       <p class="q">Are there areas of the site that are far from the house that are visited frequently?</p>
-      <p class="a">Far from the house is a relatively short distance given the lot is .43 acres total, but in a practical sense, Zones 4 &amp; 5 don't require daily visits for chores or active use — though it's fairly easy to notice something out of place in those zones while standing in Zone 3. Game cameras were also recently installed to track the movement of animals on the property, giving instant access to Zones 4 &amp; 5 from anywhere.</p>
+      <p class="a">Far from the house is a relatively short distance given the lot is .43 acres total, but in a practical sense, Zones 4 &amp; 5 don't require daily visits for chores or active use, but it's fairly easy to notice something out of place in those zones while standing in Zone 3. We also recently installed game cameras to track the movement of animals on the property which gives us instant access to Zones 4 &amp; 5 from anywhere.</p>
     </div>
     <div class="qa-block">
       <p class="q">Do you have ideas for ways to save energy, time, and resources by adjusting the current zones?</p>
-      <p class="a">The zones will likely remain as is, but what we do within each will be adapted to amplify what's already happening. For example, Zone 02 is already used daily, but since it lacks proper seating or gathering space, there's no real reason to stay there since you're likely passing through to Zone 03. Moving the wood pile and work station closer to the house will help reduce how much transporting needs to be done. Zones 4 and 5 already have mature trees growing and producing material to mulch or chip, so the plan is to encourage that more to keep a steady supply of wood chips and mulch.</p>
+      <p class="a">The zones will likely remain as is, but what we do within each will be adapted to amplify what's already happening. For example, Zone 02 is already used daily, but since it lacks proper seating or gathering space, there's no real reason to stay there since you're likely passing through to Zone 03. Moving the wood pile and work station closer to the house will help reduce how much transporting needs to be done. Zones 4 and 5 already have mature trees growing and producing material to mulch or chip so I want to encourage that more to keep a steady supply of wood chips and mulch.</p>
     </div>
 
     <h2 class="section-head">Zone 01 — North Western Side Yard</h2>
     <div class="photo-block">
       <img src="assets/zones-design/brainstorm-zone1-nw-1.jpg" alt="Zone 1 NW side yard, hostas along pool deck and annual/perennial garden bed">
       <p class="photo-caption">Remove hostas and replace with something that can provide shade for pool deck and walking path to back yard. Retain view towards backyard with clear site line to draw people back in the yard.</p>
-      <p class="photo-caption">Annual and perennial garden gets hot summer sun but this bed could be used for vining fruits that can provide shade and fruit. Generally speaking, diversify from hostas to sun loving plants.</p>
+      <p class="photo-caption">Annual and perennial garden gets hot summer sun but this bed could be used for vining fruits that can provide shade and fruit. Generally speaking I would like to diversify from hostas to sun loving plants.</p>
     </div>
     <div class="photo-block">
       <img src="assets/zones-design/brainstorm-zone1-nw-2.jpg" alt="Zone 1 NW side yard, boxwood hedge and house-side microclimate">
@@ -534,7 +534,7 @@ Body content:
     <h2 class="section-head">Zone 01 — Southeastern Side Yard</h2>
     <div class="photo-block">
       <img src="assets/zones-design/brainstorm-zone1-se.jpg" alt="Zone 1 SE side yard, boxwood hedge and former elevated deck">
-      <p class="photo-caption">Boxwood hedge to be removed and replaced with line of willow trees to be pollarded to produce fence and mulch material. This is the lowest elevation point on the property, so a mini-swale is being considered to help collect and store storm water runoff.</p>
+      <p class="photo-caption">Boxwood hedge to be removed and replaced with line of willow trees to be pollarded to produce fence and mulch material. This is the lowest elevation point on the property, so I am considering a mini-swale to help collect and store storm water runoff.</p>
       <p class="photo-caption">Former elevated deck w/entrance to home in Zone 1 now sits empty. This section of Zone 1 will be used as a drop off point for raw materials, firewood storage and work station. The long term plan is to not depend on the adjacent neighbors' driveway for wood delivery and camper load in/load out, so a truck must be able to drive through this pathway moving forward.</p>
       <p class="photo-credit">Photos by Andrew Keser, June 2026.</p>
     </div>

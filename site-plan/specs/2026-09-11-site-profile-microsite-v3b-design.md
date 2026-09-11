@@ -27,6 +27,17 @@ course record — the content is Andrew's own analysis, not something to paraphr
 "improve"). `zones-brainstorm.html` keeps the source's own framing that it's a brainstorm,
 not committed design — same "this is exploratory" note the markdown itself carries.
 
+**Verbatim policy, precise:** typo and subject/verb-agreement corrections are permitted
+without being individually flagged (e.g. the source's own `[sic]` markers, or an obvious
+slide-transcription slip). Wording, voice, and grammatical person are never altered —
+first-person "I"/"we" stays first-person, an active sentence stays active. Any content
+change beyond typo-fixing (e.g. the neighbor-privacy rewordings this phase needed) must
+be called out explicitly in the plan, with its own verification check, not folded
+silently into a "transcription." This line exists because the implementation phase
+violated it once — a review caught several sentences silently rewritten from first
+person to passive/impersonal voice, which got reverted — and the rule wasn't written
+down anywhere until after that happened.
+
 ## Images: compress before embedding
 
 9 source PNGs, raw Figma slide exports, 368KB–2.5MB each (~13MB total) — un-web-optimized.
