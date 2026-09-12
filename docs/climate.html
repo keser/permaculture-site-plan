@@ -228,7 +228,6 @@
     <a href="climate.html">Climate</a>
     <a href="water.html">Water</a>
     <a href="sun-solar.html">Sun &amp; Solar</a>
-    <a href="wind.html">Wind</a>
     <a href="flood-hazard.html">Flood &amp; Hazard</a>
     <a href="species-inventory.html">Species Inventory</a>
     <a href="zones-design.html">Zones &amp; Design</a>
@@ -246,14 +245,17 @@
     </header>
 
     <div class="grid" id="chart-grid-1"></div>
-    <div id="wind-annual-wrap"></div>
 
-    <div style="margin: 4px 0 12px;">
-      <div class="panel-title">Seasonal Wind Roses</div>
-      <div class="panel-sub">10-year hourly METAR observations, Hartford-Brainard Airport (KHFD, ~16&nbsp;km from site), 2016–2025 — reused from the Lesson 3 Sector Analysis report. See the <a href="wind.html">full Wind report</a> for the full picture.</div>
-      <div class="panel-stats" id="season-summary-line"></div>
-    </div>
-    <div class="grid" id="chart-grid-seasons"></div>
+    <section id="wind">
+      <div id="wind-annual-wrap"></div>
+
+      <div style="margin: 4px 0 12px;">
+        <div class="panel-title">Seasonal Wind Roses</div>
+        <div class="panel-sub">10-year hourly METAR observations, Hartford-Brainard Airport (KHFD, ~16&nbsp;km from site), 2016–2025. Winter prevails from the N; spring, summer, and fall all trend S (summer most strongly, at 23.7%).</div>
+        <div class="panel-stats" id="season-summary-line"></div>
+      </div>
+      <div class="grid" id="chart-grid-seasons"></div>
+    </section>
 
     <div class="panel" id="frost-panel"></div>
 
@@ -266,6 +268,7 @@
       Monthly temperature and precipitation normals, USDA hardiness zone, and wind summary digitized from the site's Lesson 1 Climate Survey (Figma Slides, June 2026), sourced there via WeatherSpark and NASA POWER. Record high/low and elevation via NOAA (Hartford-Brainard Airport / Hartford, ~18&nbsp;mi from site) and the USGS National Elevation Dataset.
       The annual wind rose's percentages are approximate — reconstructed from the source Figma chart's wedge geometry, not re-queried from underlying station data — and kept here for fidelity to the original Lesson 1 assignment.
       The four seasonal wind roses below it are the actual data: 10 years of hourly METAR observations from Hartford-Brainard Airport (KHFD, ~16&nbsp;km from the site), reused directly from the Lesson 3 Sector Analysis report. They resolve what the annual chart averages away — winter prevails from the N, while spring, summer, and fall all trend S (summer most strongly, at 23.7%).
+      Wind data: Iowa Environmental Mesonet ASOS archive for station HFD (Hartford-Brainard Airport), via mesonet.agron.iastate.edu — real hourly wind observations, not a forecast model. Seasons are meteorological (Winter = Dec/Jan/Feb, etc). Direction bins are 16-point compass (22.5° sectors).
     </footer>
   </div>
 </div>
@@ -296,15 +299,36 @@ const WIND = {
 const SECTORS_16 = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
 const SEASONS = [
   { key: "winter", label: "Winter (DJF)", meanKt: 5.78, calmPct: 20.11, predominant: "N",
-    pct: [14.916,4.116,1.123,0.63,0.527,0.502,1.018,3.311,12.835,4.377,2.072,3.244,5.274,5.687,10.69,9.567] },
+    pct: [14.916,4.116,1.123,0.63,0.527,0.502,1.018,3.311,12.835,4.377,2.072,3.244,5.274,5.687,10.69,9.567],
+    matrixPct: {"N":{"1-3":1.47,"4-7":8.386,"8-12":4.197,"13-18":0.825,"19+":0.038},"NNE":{"1-3":0.835,"4-7":2.419,"8-12":0.749,"13-18":0.104,"19+":0.009},"NE":{"1-3":0.341,"4-7":0.545,"8-12":0.175,"13-18":0.062,"19+":0.0},"ENE":{"1-3":0.19,"4-7":0.346,"8-12":0.085,"13-18":0.009,"19+":0.0},"E":{"1-3":0.275,"4-7":0.204,"8-12":0.043,"13-18":0.005,"19+":0.0},"ESE":{"1-3":0.308,"4-7":0.161,"8-12":0.028,"13-18":0.005,"19+":0.0},"SE":{"1-3":0.564,"4-7":0.384,"8-12":0.047,"13-18":0.014,"19+":0.009},"SSE":{"1-3":1.186,"4-7":1.717,"8-12":0.304,"13-18":0.071,"19+":0.033},"S":{"1-3":1.935,"4-7":7.404,"8-12":2.794,"13-18":0.645,"19+":0.057},"SSW":{"1-3":0.503,"4-7":2.371,"8-12":1.252,"13-18":0.242,"19+":0.009},"SW":{"1-3":0.341,"4-7":1.257,"8-12":0.427,"13-18":0.047,"19+":0.0},"WSW":{"1-3":0.327,"4-7":1.684,"8-12":1.043,"13-18":0.19,"19+":0.0},"W":{"1-3":0.678,"4-7":2.405,"8-12":1.688,"13-18":0.47,"19+":0.033},"WNW":{"1-3":0.379,"4-7":1.992,"8-12":2.296,"13-18":0.93,"19+":0.09},"NW":{"1-3":0.341,"4-7":3.154,"8-12":4.876,"13-18":2.115,"19+":0.204},"NNW":{"1-3":0.422,"4-7":3.913,"8-12":4.017,"13-18":1.134,"19+":0.081}} },
   { key: "spring", label: "Spring (MAM)", meanKt: 6.51, calmPct: 15.82, predominant: "S",
-    pct: [12.103,5.43,2.679,1.761,1.585,1.258,2.003,5.383,17.86,3.787,1.197,2.106,4.265,6.201,8.828,7.734] },
+    pct: [12.103,5.43,2.679,1.761,1.585,1.258,2.003,5.383,17.86,3.787,1.197,2.106,4.265,6.201,8.828,7.734],
+    matrixPct: {"N":{"1-3":0.857,"4-7":5.472,"8-12":4.648,"13-18":1.041,"19+":0.085},"NNE":{"1-3":0.587,"4-7":2.58,"8-12":1.747,"13-18":0.483,"19+":0.033},"NE":{"1-3":0.336,"4-7":1.316,"8-12":0.852,"13-18":0.17,"19+":0.005},"ENE":{"1-3":0.336,"4-7":0.928,"8-12":0.407,"13-18":0.09,"19+":0.0},"E":{"1-3":0.383,"4-7":0.989,"8-12":0.204,"13-18":0.009,"19+":0.0},"ESE":{"1-3":0.312,"4-7":0.776,"8-12":0.17,"13-18":0.0,"19+":0.0},"SE":{"1-3":0.63,"4-7":1.127,"8-12":0.246,"13-18":0.0,"19+":0.0},"SSE":{"1-3":1.122,"4-7":3.006,"8-12":1.127,"13-18":0.128,"19+":0.0},"S":{"1-3":1.69,"4-7":9.032,"8-12":5.874,"13-18":1.198,"19+":0.066},"SSW":{"1-3":0.327,"4-7":1.747,"8-12":1.401,"13-18":0.293,"19+":0.019},"SW":{"1-3":0.189,"4-7":0.596,"8-12":0.393,"13-18":0.019,"19+":0.0},"WSW":{"1-3":0.275,"4-7":0.989,"8-12":0.686,"13-18":0.156,"19+":0.0},"W":{"1-3":0.407,"4-7":1.6,"8-12":1.676,"13-18":0.544,"19+":0.038},"WNW":{"1-3":0.293,"4-7":1.794,"8-12":2.755,"13-18":1.231,"19+":0.128},"NW":{"1-3":0.26,"4-7":2.414,"8-12":4.033,"13-18":1.917,"19+":0.204},"NNW":{"1-3":0.279,"4-7":2.812,"8-12":3.261,"13-18":1.283,"19+":0.099}} },
   { key: "summer", label: "Summer (JJA)", meanKt: 4.94, calmPct: 21.13, predominant: "S",
-    pct: [8.197,4.576,1.964,1.303,1.357,1.405,3.181,9.948,23.696,5.426,1.975,2.322,2.901,2.786,3.837,3.997] },
+    pct: [8.197,4.576,1.964,1.303,1.357,1.405,3.181,9.948,23.696,5.426,1.975,2.322,2.901,2.786,3.837,3.997],
+    matrixPct: {"N":{"1-3":0.623,"4-7":4.88,"8-12":2.457,"13-18":0.232,"19+":0.005},"NNE":{"1-3":0.671,"4-7":2.775,"8-12":1.004,"13-18":0.126,"19+":0.0},"NE":{"1-3":0.473,"4-7":1.086,"8-12":0.391,"13-18":0.014,"19+":0.0},"ENE":{"1-3":0.391,"4-7":0.772,"8-12":0.126,"13-18":0.014,"19+":0.0},"E":{"1-3":0.541,"4-7":0.777,"8-12":0.034,"13-18":0.005,"19+":0.0},"ESE":{"1-3":0.57,"4-7":0.777,"8-12":0.058,"13-18":0.0,"19+":0.0},"SE":{"1-3":1.25,"4-7":1.762,"8-12":0.159,"13-18":0.005,"19+":0.005},"SSE":{"1-3":2.447,"4-7":5.845,"8-12":1.53,"13-18":0.126,"19+":0.0},"S":{"1-3":3.181,"4-7":13.815,"8-12":6.096,"13-18":0.594,"19+":0.01},"SSW":{"1-3":0.488,"4-7":3.012,"8-12":1.81,"13-18":0.116,"19+":0.0},"SW":{"1-3":0.237,"4-7":1.13,"8-12":0.603,"13-18":0.005,"19+":0.0},"WSW":{"1-3":0.237,"4-7":1.245,"8-12":0.777,"13-18":0.063,"19+":0.0},"W":{"1-3":0.27,"4-7":1.545,"8-12":1.028,"13-18":0.053,"19+":0.005},"WNW":{"1-3":0.179,"4-7":1.376,"8-12":1.091,"13-18":0.14,"19+":0.0},"NW":{"1-3":0.227,"4-7":1.805,"8-12":1.501,"13-18":0.304,"19+":0.0},"NNW":{"1-3":0.188,"4-7":2.018,"8-12":1.453,"13-18":0.319,"19+":0.019}} },
   { key: "fall",   label: "Fall (SON)",   meanKt: 4.95, calmPct: 26.05, predominant: "S",
-    pct: [14.272,6.041,1.96,1.283,1.111,1.016,1.707,4.625,14.444,3.911,1.741,2.251,3.457,3.839,6.052,6.246] },
+    pct: [14.272,6.041,1.96,1.283,1.111,1.016,1.707,4.625,14.444,3.911,1.741,2.251,3.457,3.839,6.052,6.246],
+    matrixPct: {"N":{"1-3":1.178,"4-7":7.372,"8-12":5.036,"13-18":0.672,"19+":0.014},"NNE":{"1-3":0.815,"4-7":3.533,"8-12":1.373,"13-18":0.315,"19+":0.005},"NE":{"1-3":0.505,"4-7":1.03,"8-12":0.324,"13-18":0.091,"19+":0.01},"ENE":{"1-3":0.41,"4-7":0.677,"8-12":0.191,"13-18":0.005,"19+":0.0},"E":{"1-3":0.534,"4-7":0.491,"8-12":0.086,"13-18":0.0,"19+":0.0},"ESE":{"1-3":0.529,"4-7":0.463,"8-12":0.024,"13-18":0.0,"19+":0.0},"SE":{"1-3":0.844,"4-7":0.758,"8-12":0.081,"13-18":0.024,"19+":0.0},"SSE":{"1-3":1.483,"4-7":2.394,"8-12":0.653,"13-18":0.081,"19+":0.014},"S":{"1-3":2.48,"4-7":8.183,"8-12":3.209,"13-18":0.529,"19+":0.043},"SSW":{"1-3":0.401,"4-7":2.26,"8-12":1.121,"13-18":0.129,"19+":0.0},"SW":{"1-3":0.224,"4-7":1.183,"8-12":0.324,"13-18":0.01,"19+":0.0},"WSW":{"1-3":0.234,"4-7":1.297,"8-12":0.577,"13-18":0.143,"19+":0.0},"W":{"1-3":0.567,"4-7":1.421,"8-12":1.178,"13-18":0.267,"19+":0.024},"WNW":{"1-3":0.358,"4-7":1.564,"8-12":1.497,"13-18":0.396,"19+":0.024},"NW":{"1-3":0.329,"4-7":2.208,"8-12":2.647,"13-18":0.844,"19+":0.024},"NNW":{"1-3":0.52,"4-7":2.532,"8-12":2.565,"13-18":0.61,"19+":0.019}} },
 ];
 const KT_TO_MPH = 1.15078;
+
+const WIND_MONTHLY = [
+  {"month":"January","n_obs":7250,"mean_speed_kt":6.02,"max_speed_kt":23.0,"calm_pct":18.58,"prevailing_direction":"N","prevailing_pct":15.53},
+  {"month":"February","n_obs":6614,"mean_speed_kt":6.1,"max_speed_kt":28.0,"calm_pct":18.28,"prevailing_direction":"N","prevailing_pct":16.21},
+  {"month":"March","n_obs":7172,"mean_speed_kt":7.05,"max_speed_kt":67.0,"calm_pct":14.78,"prevailing_direction":"S","prevailing_pct":13.94},
+  {"month":"April","n_obs":6909,"mean_speed_kt":6.64,"max_speed_kt":24.0,"calm_pct":15.4,"prevailing_direction":"S","prevailing_pct":18.09},
+  {"month":"May","n_obs":7045,"mean_speed_kt":5.82,"max_speed_kt":21.0,"calm_pct":17.29,"prevailing_direction":"S","prevailing_pct":21.62},
+  {"month":"June","n_obs":6806,"mean_speed_kt":5.36,"max_speed_kt":19.0,"calm_pct":18.92,"prevailing_direction":"S","prevailing_pct":26.54},
+  {"month":"July","n_obs":6954,"mean_speed_kt":4.92,"max_speed_kt":20.0,"calm_pct":20.05,"prevailing_direction":"S","prevailing_pct":24.62},
+  {"month":"August","n_obs":6957,"mean_speed_kt":4.56,"max_speed_kt":30.0,"calm_pct":24.36,"prevailing_direction":"S","prevailing_pct":19.99},
+  {"month":"September","n_obs":6815,"mean_speed_kt":4.63,"max_speed_kt":20.0,"calm_pct":25.8,"prevailing_direction":"N","prevailing_pct":16.45},
+  {"month":"October","n_obs":7172,"mean_speed_kt":4.89,"max_speed_kt":21.0,"calm_pct":27.41,"prevailing_direction":"N","prevailing_pct":15.53},
+  {"month":"November","n_obs":6984,"mean_speed_kt":5.32,"max_speed_kt":36.0,"calm_pct":24.89,"prevailing_direction":"S","prevailing_pct":13.46},
+  {"month":"December","n_obs":7220,"mean_speed_kt":5.26,"max_speed_kt":25.0,"calm_pct":23.31,"prevailing_direction":"N","prevailing_pct":13.12}
+];
+const WIND_SPEED_BINS = ["1-3","4-7","8-12","13-18","19+"];
+const WIND_SPEED_LABELS = { "1-3": "1–3 kt", "4-7": "4–7 kt", "8-12": "8–12 kt", "13-18": "13–18 kt", "19+": "19+ kt" };
 
 const FROST = {
   lastSpringDay: 104,  // Apr 14
@@ -724,6 +748,30 @@ function buildWindRosePanel({ container, title, sub, stats, sectors, pct, predom
     }).join("")}</tbody>
   `;
   tableGrid.appendChild(t4);
+
+  const t5 = document.createElement("table");
+  t5.className = "data-table";
+  t5.innerHTML = `
+    <caption>Monthly wind summary — KHFD, 2016–2025</caption>
+    <thead><tr><th>Month</th><th>Mean speed</th><th>Max gust</th><th>Calm %</th><th>Prevailing dir.</th><th>Prevailing %</th></tr></thead>
+    <tbody>${WIND_MONTHLY.map(m => `<tr><td>${m.month}</td><td>${(m.mean_speed_kt * KT_TO_MPH).toFixed(1)} mph</td><td>${(m.max_speed_kt * KT_TO_MPH).toFixed(1)} mph</td><td>${m.calm_pct}%</td><td>${m.prevailing_direction}</td><td>${m.prevailing_pct}%</td></tr>`).join("")}</tbody>
+  `;
+  tableGrid.appendChild(t5);
+
+  SEASONS.forEach(season => {
+    const t = document.createElement("table");
+    t.className = "data-table";
+    const rows = SECTORS_16.map(sec => {
+      const cells = WIND_SPEED_BINS.map(b => `<td>${(season.matrixPct[sec][b] || 0).toFixed(1)}%</td>`).join("");
+      return `<tr><td>${sec}</td>${cells}<td><b>${season.pct[SECTORS_16.indexOf(sec)].toFixed(1)}%</b></td></tr>`;
+    }).join("");
+    t.innerHTML = `
+      <caption>${season.label} — direction × speed (KHFD, 2016–2025)</caption>
+      <thead><tr><th style="text-align:left;">Dir.</th>${WIND_SPEED_BINS.map(b => `<th>${WIND_SPEED_LABELS[b]}</th>`).join("")}<th>Total</th></tr></thead>
+      <tbody>${rows}</tbody>
+    `;
+    tableGrid.appendChild(t);
+  });
 })();
 </script>
 <!-- FOOTER:START -->
