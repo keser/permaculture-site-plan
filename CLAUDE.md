@@ -130,34 +130,3 @@ file is ever re-ported from that source, the account number must be stripped aga
 search for the specific line patterns: a body-text mention near "four consecutive bills"
 and the "Source:" citation line (the account number in the private `pdc-pro-2026` repo is
 the one to search for and remove).
-
-### Progress Journal
-
-`docs/journal.html` is a different kind of page from the reports above: a curated, first-person,
-reverse-chronological narrative of real on-site work, rather than a topic-based data report. It's
-sourced from `site-plan/progress-log.md`, but it's a deliberate rewrite, not a port — task codes
-(R1, S2, D4, etc.), phase-file cross-references, and internal plan-revision bookkeeping never appear
-in it; the source's own corrections to its *internal* notes aren't narrated (the reader never saw
-the wrong version, so there's nothing to correct for them) — but a change to a plan already stated
-in an earlier *published* journal entry is narrated as what actually happened, since the reader did
-see that plan.
-
-This section restates only a few of the curation rules — see
-`site-plan/specs/2026-09-11-progress-journal-design.md` for the complete list, including the rule
-that prose rewriting is expected and not a verbatim-policy violation on this one page, unlike every
-other page on the site. Entry headings so far are plain date-based labels ("Weekend of September 5,
-2026", "Early September 2026") — no other structure (tags, categories, etc.) is implied.
-
-**Ongoing workflow:** whenever Andrew gives a real progress update, update `progress-log.md` /
-phase files as usual, *and* draft the corresponding curated journal entry in the same pass, inserting
-it at the top of `docs/journal.html`'s entry list (the page is reverse-chronological — newest first).
-Apply the curation rules above every time — this isn't a one-time backfill.
-
-**Privacy rule specific to this page:** never publish a forward-looking date range that signals when
-the property will be occupied or empty (e.g. "on-site Sept 12–18"). Past work-dates are fine. A
-dateless "what's next" beat is fine. This is separate from — and doesn't relax — the site's existing
-address/location policy above.
-
-Drafting a new entry into the working tree doesn't skip this repo's normal confirm-before-push
-convention — committing and pushing the update still gets confirmed with Andrew first, same as any
-other change.
