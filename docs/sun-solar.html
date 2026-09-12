@@ -68,7 +68,7 @@
     :root:where(:not([data-theme="light"])) .viz-root { --spc-series-winter: #3987e5; --spc-series-spring: #008300; --spc-series-summer: #d55181; --spc-series-fall: #c98500; }
   }
   :root[data-theme="dark"] .viz-root { --spc-series-winter: #3987e5; --spc-series-spring: #008300; --spc-series-summer: #d55181; --spc-series-fall: #c98500; }
-  header.page-head { margin-bottom: 28px; }
+  header.spc-page-head { margin-bottom: 28px; }
   .spc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 720px) { .spc-grid { grid-template-columns: 1fr; } }
   .spc-panel-stats { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
@@ -84,8 +84,8 @@
   .spc-crosshair-line { stroke: var(--text-muted); stroke-width: 1; stroke-dasharray: 2,2; pointer-events: none; opacity: 0; }
   .spc-hover-dot { pointer-events: none; opacity: 0; }
   .spc-hit-layer { fill: transparent; cursor: crosshair; }
-  details.table-toggle { margin-top: 28px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; }
-  details.table-toggle summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--text-primary); }
+  details.spc-table-toggle { margin-top: 28px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; }
+  details.spc-table-toggle summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--text-primary); }
   .spc-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 14px; }
   @media (max-width: 720px) { .spc-tables { grid-template-columns: 1fr; } }
   table.data-table { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
@@ -93,7 +93,7 @@
   table.data-table th, table.data-table td { text-align: right; padding: 3px 6px; color: var(--text-secondary); border-bottom: 1px solid var(--grid); }
   table.data-table th:first-child, table.data-table td:first-child { text-align: left; color: var(--text-primary); }
   table.data-table th { color: var(--text-muted); font-weight: 500; font-variant-numeric: normal; }
-  footer.notes { margin-top: 22px; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+  footer.spc-notes { margin-top: 22px; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
 
   /* ---- sun-path-3d.html (sp3d-) ---- */
   .viz-root { --sp3d-series-winter: #2a78d6; --sp3d-series-spring: #008300; --sp3d-series-summer: #e87ba4; --sp3d-series-fall: #eda100; --sp3d-ground: #e9e6dc; --sp3d-ground-ring: #c9c5b6; }
@@ -101,11 +101,11 @@
     :root:where(:not([data-theme="light"])) .viz-root { --sp3d-series-winter: #3987e5; --sp3d-series-spring: #008300; --sp3d-series-summer: #d55181; --sp3d-series-fall: #c98500; --sp3d-ground: #2a2a26; --sp3d-ground-ring: #3c3b34; }
   }
   :root[data-theme="dark"] .viz-root { --sp3d-series-winter: #3987e5; --sp3d-series-spring: #008300; --sp3d-series-summer: #d55181; --sp3d-series-fall: #c98500; --sp3d-ground: #2a2a26; --sp3d-ground-ring: #3c3b34; }
-  header.page-head { margin-bottom: 20px; }
+  header.sp3d-page-head { margin-bottom: 20px; }
   .sp3d-legend-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; font-size: 12.5px; color: var(--text-secondary); }
   .sp3d-legend-row .item { display: flex; align-items: center; gap: 6px; }
   .sp3d-legend-row .swatch { width: 14px; height: 3px; border-radius: 2px; }
-  footer.notes { margin-top: 16px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  footer.sp3d-notes { margin-top: 16px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
 
   /* ---- sun-path-overlay.html (spo-) ---- */
   .viz-root { --spo-series-winter: #2a78d6; --spo-series-spring: #008300; --spo-series-summer: #e87ba4; --spo-series-fall: #eda100; --spo-hour-grid: rgba(11,11,11,0.28); }
@@ -113,7 +113,7 @@
     :root:where(:not([data-theme="light"])) .viz-root { --spo-series-winter: #3987e5; --spo-series-spring: #008300; --spo-series-summer: #d55181; --spo-series-fall: #c98500; --spo-hour-grid: rgba(255,255,255,0.3); }
   }
   :root[data-theme="dark"] .viz-root { --spo-series-winter: #3987e5; --spo-series-spring: #008300; --spo-series-summer: #d55181; --spo-series-fall: #c98500; --spo-hour-grid: rgba(255,255,255,0.3); }
-  header.page-head { margin-bottom: 24px; }
+  header.spo-page-head { margin-bottom: 24px; }
   section { margin-bottom: 28px; }
   .spo-aerial-frame { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: #000; }
   .spo-aerial-frame img { display: block; width: 100%; height: auto; }
@@ -156,7 +156,7 @@
   }
   .spo-month-legend .item { display: flex; align-items: center; gap: 6px; }
   .spo-month-legend .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-  footer.notes { margin-top: 8px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+  footer.spo-notes { margin-top: 8px; font-size: 12px; color: var(--text-muted); line-height: 1.7; }
 </style>
 </head>
 <body>
@@ -211,19 +211,19 @@
       </header>
 
       <section class="page-section" id="sun-path-charts">
-        <header class="page-head">
+        <header class="spc-page-head">
           <h2 class="section-title">Sun Path Charts</h2>
           <p class="subhead">41.5728°N, 72.6344°W · altitude vs. azimuth, local clock time · winter solstice, spring equinox, summer solstice, fall equinox (2026)</p>
         </header>
 
         <div class="spc-grid" id="spc-chart-grid"></div>
 
-        <details class="table-toggle">
+        <details class="spc-table-toggle">
           <summary>View hourly data table</summary>
           <div class="spc-tables" id="spc-table-grid"></div>
         </details>
 
-        <footer class="notes">
+        <footer class="spc-notes">
           Computed with the NOAA solar-position algorithm (declination + equation-of-time series, ±0.01° accuracy) for the site's exact coordinates.
           Times are local clock time (EST in December, EDT in March/June/September). Azimuth is measured clockwise from true north.
           Cross-checked against the site's SunCalc-derived solstice figures in the Lesson 3 sector-analysis report — solar noon altitude and sunrise/sunset azimuth agree within ~1°.
@@ -231,7 +231,7 @@
       </section>
 
       <section class="page-section" id="sun-path-3d">
-        <header class="page-head">
+        <header class="sp3d-page-head">
           <h2 class="section-title">Sun Path — 3D Site Diagram</h2>
           <p class="subhead">
             The same 4 seasonal sun paths as the aerial overlay, shown as true arcs through the sky above a simplified
@@ -246,7 +246,7 @@
           <div class="sp3d-legend-row" id="sp3d-legend"></div>
         </div>
 
-        <footer class="notes">
+        <footer class="sp3d-notes">
           Site massing: real footprints and positions from the Sector Compass base map (house, camper, chicken coop,
           pool, and the largest trees within the parcel), converted to feet using the base map's own scale bar and
           rotated to true north-up. Sun-path data: NOAA solar-position algorithm at the site's exact coordinates,
@@ -256,7 +256,7 @@
       </section>
 
       <section class="page-section" id="sun-path-overlay">
-        <header class="page-head">
+        <header class="spo-page-head">
           <h2 class="section-title">Sun Path Overlay</h2>
           <p class="subhead">
             Where the sun actually tracks across this specific yard, by season — plotted directly onto the site's
@@ -300,7 +300,7 @@
           </div>
         </section>
 
-        <footer class="notes">
+        <footer class="spo-notes">
           Seasonal arc data: NOAA solar-position algorithm at the site's exact coordinates, the same series used in the
           Sun Path Charts report (winter solstice, spring/fall equinox, summer solstice, 2026).
           Annual chart data: University of Oregon Solar Radiation Monitoring Laboratory, Sun Chart Program
