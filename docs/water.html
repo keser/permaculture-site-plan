@@ -913,7 +913,7 @@
     // decade ticks
     for(let e=-3;e<=4;e++){
       const x=L(Math.pow(10,e));
-      svg.appendChild(el("line",{class:"gl",x1:x,y1:y0-4,x2:x,y2:y0+ROWS.length*rowH-6,stroke:"var(--grid)"}));
+      svg.appendChild(el("line",{class:"shed-gl",x1:x,y1:y0-4,x2:x,y2:y0+ROWS.length*rowH-6,stroke:"var(--grid)"}));
       txt(svg,(e<0?Math.pow(10,e):Math.pow(10,e).toLocaleString()),{x,y:y0+ROWS.length*rowH+10,"text-anchor":"middle"});
     }
     txt(svg,"drainage area, sq mi — log scale",{x:(BX0+BX1)/2,y:y0+ROWS.length*rowH+26,"text-anchor":"middle"});

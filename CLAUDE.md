@@ -92,8 +92,8 @@ Plain GitHub Issues, no Projects board. Labels: `task`, `dad-request`,
 ## Site Microsite (`docs/`)
 
 **Live since 2026-09-11:** <https://keser.github.io/permaculture-site-plan/> (GitHub
-Pages, source = `main` / `/docs`). V1 covers Home, Climate, Sun & Solar, Wind, and
-Flood & Hazard. Internal links must stay **relative** (`climate.html`, not
+Pages, source = `main` / `/docs`). V1 covers Home, Climate (Wind folded in), Sun & Solar,
+and Flood & Hazard. Internal links must stay **relative** (`climate.html`, not
 `/climate.html`) — this is a project-scoped Pages site, not a domain root, so a
 root-absolute link 404s.
 
@@ -102,7 +102,31 @@ already carry this in their own `<style>` block; a hand-authored page (like `ind
 `sun-solar.html`) that omits it gets a visible white border from the browser's default
 body margin — `.viz-root`'s own background doesn't reach the viewport edge. Fixed once
 already (2026-09-11) on `index.html`/`sun-solar.html`; include it from the start on any
-new hand-authored page (e.g. a future Zones & Design page).
+new hand-authored page.
+
+### Page-consolidation convention (`water.html`, `sun-solar.html`, `zones-design.html`)
+
+These three are single long-form pages (not hub+children): each is a sequence of full-width
+`<section class="page-section" id="...">` blocks, with a `.badge-row` of anchor-link pills
+(`<a class="badge" href="#...">`) under the header acting as in-page secondary nav.
+
+**Merge-safety rule when adding a new visualization to one of these pages:** every CSS custom
+property, CSS class, *and* bare element/attribute selector (not just classes — this branch's
+own prefix tables initially missed a couple of bare `section {...}`-style rules) that isn't one
+of the universal shared identifiers below must get a unique per-file/per-section prefix, applied
+at *every* declaration and reference (CSS, HTML `class` attributes, JS
+`getElementById`/`querySelector`/`var()`). Wrap each source script in its own
+`(function(){...})();` IIFE.
+
+Universal shared identifiers — already consistent site-wide, do **not** prefix these:
+- CSS custom properties: `--surface-1`, `--page`, `--text-primary`, `--text-secondary`,
+  `--text-muted`, `--grid`, `--baseline`, `--border`, `--badge-bg`, `--accent`
+- CSS classes: `.viz-root`, `.wrap`, `.subhead`, `.badge-row`, `.badge`, `.panel`,
+  `.panel-title`, `.panel-sub`, `svg.chart`, `.tooltip`, `.data-table`
+
+**Cross-page anchor contracts** — other pages link to these ids; don't rename without updating
+the linking page: `docs/sectors.html` links to `sun-solar.html#sun-path-charts` and
+`climate.html#wind`.
 
 Plain HTML/CSS, no build step, no JS framework —
 matches the `.viz-root` visual pattern from `pdc-pro-2026`'s data-viz reports (light/dark
@@ -122,11 +146,13 @@ the source list) — copied and adapted here, not symlinked or generated, per th
 Related Repo convention below. Built in phases; see `site-plan/specs/` for each phase's
 design doc.
 
-**Redacted account number in `docs/water-use-by-season.html`:** the upstream source
+**Redacted account number in `docs/water.html`'s `#water-use` section:** the upstream source
 (`pdc-pro-2026/lesson-05-water/assets/water-use-by-season.html`) still contains a real
-water-utility account number, redacted here per an explicit human decision. **Don't quote
+water-utility account number, redacted here per an explicit human decision. (This content
+originally lived in its own `docs/water-use-by-season.html`; the page-consolidation branch
+folded it into `docs/water.html`'s `#water-use` section, redaction intact.) **Don't quote
 the number itself in this repo — that would republish exactly what was redacted.** If this
-file is ever re-ported from that source, the account number must be stripped again —
+section is ever re-ported from that source, the account number must be stripped again —
 search for the specific line patterns: a body-text mention near "four consecutive bills"
 and the "Source:" citation line (the account number in the private `pdc-pro-2026` repo is
 the one to search for and remove).
