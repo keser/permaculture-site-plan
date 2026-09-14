@@ -32,7 +32,7 @@
     background: var(--page); color: var(--text-primary); min-height: 80vh;
     padding: 32px 20px 60px;
   }
-  .wrap { max-width: 960px; margin: 0 auto; }
+  .wrap { max-width: 1280px; margin: 0 auto; }
   h1 { font-size: 26px; font-weight: 600; margin: 0 0 6px; }
   .subhead { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin: 0 0 8px; max-width: 640px; }
   .subhead-muted { color: var(--text-muted); font-size: 12px; margin: 0 0 24px; }
@@ -49,13 +49,19 @@
   .fact-value { font-size: 16px; font-weight: 600; color: var(--text-primary); margin: 0; line-height: 1.3; }
 
   h2.section-head { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 12px; }
-  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
   .nav-card {
-    display: block; background: var(--surface-1); border: 1px solid var(--border);
-    border-radius: 12px; padding: 18px 20px; text-decoration: none; color: inherit;
+    background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 12px; padding: 18px 20px;
   }
+  .nav-card .card-title { display: block; text-decoration: none; color: inherit; }
+  .nav-card .card-title:hover h3 { text-decoration: underline; }
   .nav-card h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; color: var(--text-primary); }
   .nav-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+  .card-stats { display: flex; flex-direction: column; gap: 5px; margin: 12px 0 0; padding-top: 12px; border-top: 1px solid var(--border); }
+  .card-stats a { font-size: 12px; color: var(--text-secondary); text-decoration: none; }
+  .card-stats a:hover { color: var(--text-primary); text-decoration: underline; }
+  .card-stats a::before { content: "→ "; color: var(--text-muted); }
   .divider { height: 1px; background: var(--grid); margin: 8px 0 32px; border: none; }
   .history-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
   .history-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
@@ -92,14 +98,14 @@
 <nav class="site-nav">
   <a class="site-nav__brand" href="index.html">Lot #86 — Site Profile</a>
   <div class="site-nav__links">
+    <a href="base-map.html">Base Map</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="zones-design.html">Zones &amp; Design</a>
     <a href="climate.html">Climate</a>
     <a href="water.html">Water</a>
     <a href="sun-solar.html">Sun &amp; Solar</a>
     <a href="flood-hazard.html">Flood &amp; Hazard</a>
     <a href="species-inventory.html">Species Inventory</a>
-    <a href="zones-design.html">Zones &amp; Design</a>
-    <a href="base-map.html">Base Map</a>
-    <a href="sectors.html">Sectors</a>
   </div>
 </nav>
 <!-- NAV:END -->
@@ -124,38 +130,67 @@
 
     <h2 class="section-head">Available now</h2>
     <div class="card-grid">
-      <a class="nav-card" href="climate.html">
-        <h3>Climate</h3>
-        <p>Temperature, precipitation, wind, and frost-free/hardiness data for the site.</p>
-      </a>
-      <a class="nav-card" href="water.html">
-        <h3>Watersheds &amp; Water</h3>
-        <p>Eight views of water on the property: rainfall, runoff, water balance, elevation, flow, storm design, the macro watershed, and seasonal household use.</p>
-      </a>
-      <a class="nav-card" href="sun-solar.html">
-        <h3>Sun &amp; Solar</h3>
-        <p>Three views of solar exposure: sun-path charts, a 3D seasonal model, and a base-map exposure overlay.</p>
-      </a>
-      <a class="nav-card" href="flood-hazard.html">
-        <h3>Flood &amp; Hazard</h3>
-        <p>FEMA flood zone and First Street Foundation risk-factor data, checked directly by address.</p>
-      </a>
-      <a class="nav-card" href="species-inventory.html">
-        <h3>Species Inventory</h3>
-        <p>A georeferenced site map of observed species, from iNaturalist field data.</p>
-      </a>
-      <a class="nav-card" href="zones-design.html">
-        <h3>Zones &amp; Design</h3>
-        <p>The property's current permaculture zones, their microclimates, and a brainstorm of proposed design changes for the future.</p>
-      </a>
-      <a class="nav-card" href="base-map.html">
-        <h3>Base Map</h3>
+      <div class="nav-card">
+        <a class="card-title" href="base-map.html"><h3>Base Map</h3></a>
         <p>The full-color hand-drawn site plan every other spatial page works from, with a legend.</p>
-      </a>
-      <a class="nav-card" href="sectors.html">
-        <h3>Sectors</h3>
+        <div class="card-stats">
+          <a href="base-map.html">106&ndash;114 ft elevation</a>
+          <a href="base-map.html">41&deg;34&prime;22.04&Prime;N 72&deg;38&prime;03.90&Prime;W</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="sectors.html"><h3>Sectors</h3></a>
         <p>Sun, wind, fire, noise, and other outside forces mapped and matched with a design response.</p>
-      </a>
+        <div class="card-stats">
+          <a href="sectors.html#wind">Wind: N (winter), S (summer, 23.7%)</a>
+          <a href="sectors.html#sun-solar">46.8&deg; solar-noon swing, winter to summer</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="zones-design.html"><h3>Zones &amp; Design</h3></a>
+        <p>The property's current permaculture zones, their microclimates, and a brainstorm of proposed design changes for the future.</p>
+        <div class="card-stats">
+          <a href="zones-design.html#current-zones">5 zones, house &rarr; wild</a>
+          <a href="zones-design.html#microclimates">4 microclimate types</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="climate.html"><h3>Climate</h3></a>
+        <p>Temperature, precipitation, wind, and frost-free/hardiness data for the site.</p>
+        <div class="card-stats">
+          <a href="climate.html#frost-panel">192 frost-free days</a>
+          <a href="climate.html#precipitation">43.5 in/yr, no dry season</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="water.html"><h3>Watersheds &amp; Water</h3></a>
+        <p>Eight views of water on the property: rainfall, runoff, water balance, elevation, flow, storm design, the macro watershed, and seasonal household use.</p>
+        <div class="card-stats">
+          <a href="water.html#water-balance">508,000 gal/yr rain, ~25% runoff</a>
+          <a href="water.html#water-use">&asymp;46,000 gal/yr household use</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="sun-solar.html"><h3>Sun &amp; Solar</h3></a>
+        <p>Three views of solar exposure: sun-path charts, a 3D seasonal model, and a base-map exposure overlay.</p>
+        <div class="card-stats">
+          <a href="sun-solar.html#sun-path-charts">71.9&deg; summer / 25.0&deg; winter solar noon</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="flood-hazard.html"><h3>Flood &amp; Hazard</h3></a>
+        <p>FEMA flood zone and First Street Foundation risk-factor data, checked directly by address.</p>
+        <div class="card-stats">
+          <a href="flood-hazard.html">FEMA Zone X &middot; Flood Factor 1/10 &mdash; minimal</a>
+        </div>
+      </div>
+      <div class="nav-card">
+        <a class="card-title" href="species-inventory.html"><h3>Species Inventory</h3></a>
+        <p>A georeferenced site map of observed species, from iNaturalist field data.</p>
+        <div class="card-stats">
+          <a href="species-inventory.html#species-catalog">79 observations / 74 species</a>
+        </div>
+      </div>
     </div>
 
     <h2 class="section-head">Site History</h2>

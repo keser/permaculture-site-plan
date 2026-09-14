@@ -32,7 +32,7 @@
     background: var(--page); color: var(--text-primary);
     padding: 32px 20px 60px;
   }
-  .wrap { max-width: 780px; margin: 0 auto; }
+  .wrap { max-width: 1280px; margin: 0 auto; }
   h1 { font-size: 24px; font-weight: 600; margin: 0 0 6px; }
   .subhead { color: var(--text-secondary); font-size: 14px; line-height: 1.5; margin: 0 0 24px; }
   .hero { margin-bottom: 8px; }
@@ -76,14 +76,14 @@
 <nav class="site-nav">
   <a class="site-nav__brand" href="index.html">Lot #86 — Site Profile</a>
   <div class="site-nav__links">
+    <a href="base-map.html">Base Map</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="zones-design.html">Zones &amp; Design</a>
     <a href="climate.html">Climate</a>
     <a href="water.html">Water</a>
     <a href="sun-solar.html">Sun &amp; Solar</a>
     <a href="flood-hazard.html">Flood &amp; Hazard</a>
     <a href="species-inventory.html">Species Inventory</a>
-    <a href="zones-design.html">Zones &amp; Design</a>
-    <a href="base-map.html">Base Map</a>
-    <a href="sectors.html">Sectors</a>
   </div>
 </nav>
 <!-- NAV:END -->
@@ -101,7 +101,7 @@
     <p>Most of the data below is county- or state-level rather than parcel-level — normal for a residential lot this size, since national/state datasets don't resolve to individual half-acre parcels. Where that's the case, it's called out explicitly, and the regional data is used as the best available proxy.</p>
   </div>
 
-  <h2 class="section-head">Sun / Solar</h2>
+  <h2 class="section-head" id="sun-solar">Sun / Solar</h2>
   <div class="sector-block">
     <p>Correction from an earlier draft of this report: the OSU textbook does treat solar aspect as its own later chapter, but the actual Lesson 3 assignment (Sector Compass) explicitly requires a Solar Angle Analysis as part of this deliverable — summer/winter sun angles, used later for the site cross-section's shading and solar-gain analysis. It belongs here, not deferred.</p>
     <p>Using <a href="https://www.suncalc.org/#/41.5728,-72.6344,17/2026.06.21/13:00/1/3" target="_blank" rel="noopener">SunCalc</a> (one of the three sun-path tools the assignment itself recommends) for the site's exact coordinates (41.5728&deg;N, 72.6344&deg;W):</p>
@@ -120,7 +120,7 @@
     <p><b>Design implication:</b> the low winter sun (25&deg;) travels a short, low arc through the southern sky, so anything on the south side of a bed — a structure, an evergreen, a neighbor's house — casts a long winter shadow; any spot counted on for winter solar gain needs a genuinely clear southern sightline, not just "faces south." The near-overhead summer sun (71.8&deg;), by contrast, rises/sets far north of due east/west, so east- and west-facing beds still get real low-angle sun in early morning and evening through summer even if they're shaded at midday. Two concrete ties to the master plan: the planned pine/oak limbing raises the effective canopy line, letting more low-angle winter sun reach the ground beneath those trees — relevant if any bed ends up in their winter shadow line. The planned raised beds and new plantings, on a 0.43-acre in-town lot with houses close on both sides, mean a spot that reads as full sun in July can still be shaded by a neighbor's roofline or a deciduous tree (once leafed out, or even bare in winter) at the 25&deg; winter sun angle. Worth an on-the-ground shadow check near the December solstice specifically, not just judging placement off current summer canopy.</p>
   </div>
 
-  <h2 class="section-head">Wind</h2>
+  <h2 class="section-head" id="wind">Wind</h2>
   <div class="sector-block">
     <p>Central Connecticut sits in the mid-latitude prevailing westerlies, with a clear seasonal split: northwest-to-north winds dominate the colder months, while southwest-to-south winds predominate from roughly April through September (<a href="https://www.weather.gov/box/prevailing_winds" target="_blank" rel="noopener">NWS Boston/Norton, "Prevailing Winds"</a>).</p>
     <p>Station-level data confirms and sharpens this: 10 years (2016&ndash;2025) of hourly METAR observations from Hartford-Brainard Airport (KHFD, 16 km away — the nearest station with an actual historical record; Windfinder's own "Cromwell" spot turned out to be a forecast-model point with no real station behind it) show winter prevailing from the N (14.9% of hours), and spring, summer, and fall all prevailing from the S — most strongly in summer (23.7% of hours from S, only 21% calm). Winter is notably bimodal (both N and S show up as real petals, not just N), which the regional NWS generalization doesn't capture. Four seasonal wind roses and a monthly summary table are on this site's own <a href="climate.html#wind">Wind</a> page.</p>
@@ -128,14 +128,14 @@
     <p><b>Design implication:</b> the site's exposed side to winter wind is the NW quadrant — this is the side to prioritize for windbreak density before mini-split/heating-load decisions (ties to the planned electrical panel upgrade that will carry that load) and is worth factoring into where the pollard willow row gets planted if it's meant to double as a windbreak rather than just a material crop and screen. Summer's SW airflow is also the same direction Middlesex County's ozone problem arrives from (see Pollutants, below) — the two sectors compound on that side of the property.</p>
   </div>
 
-  <h2 class="section-head">Fire</h2>
+  <h2 class="section-head" id="fire">Fire</h2>
   <div class="sector-block">
     <p>Connecticut's local wildfire risk is low relative to the western US — elevated humidity keeps fuel moisture stable most of the year (<a href="https://portal.ct.gov/deep/forestry/forest-fire/fire-danger-weather-and-reporting" target="_blank" rel="noopener">CT DEEP Forestry, "Fire Danger, Weather, and Reporting"</a>). That said, the risk isn't zero: in dry autumn stretches the state has seen real elevated fire weather, and in a notable November 2025 episode Connecticut and the rest of the Northeast experienced smoke transport and elevated fire danger from over 800 active wildfires in Canada, carried in on persistent northwest winds (<a href="https://www.nbcnews.com/news/us-news/150-homes-evacuated-wildfire-risk-persists-historically-dry-northeast-rcna180587" target="_blank" rel="noopener">NBC News, Nov 2025</a>).</p>
     <p><b>Response: Deflect</b> (low-intensity). Risk is low but not zero; existing low-effort fuel-reduction tasks are a passive deflection, not an active defensible-space campaign.</p>
     <p><b>Design implication:</b> low priority for defensible-space design (no need for aggressive brush-clearing setbacks the way a western-US site would), but the existing clearing tasks (deadwood/branch cleanup, wood-pile reorganization) already reduce accumulated dry fuel near structures, which is the practical, low-effort version of fire-sector design for a site at this risk level.</p>
   </div>
 
-  <h2 class="section-head">Pollutants</h2>
+  <h2 class="section-head" id="pollutants">Pollutants</h2>
   <div class="sector-block">
     <p>Middlesex County (Portland's county) currently carries an <a href="https://www.lung.org/research/sota/city-rankings/states/connecticut/middlesex" target="_blank" rel="noopener">F grade for ozone from the American Lung Association's <i>State of the Air</i> report</a>, averaging about 7.2 unhealthy ozone days per year — and CT DEEP anticipates Middlesex being reclassified toward "severe" nonattainment under the 2008 ozone standard. Ozone pollution is a regional transport problem, not a local point-source one — it forms from precursor pollutants carried up the Northeast corridor, arriving predominantly on the same summer SW wind identified in the Wind sector above.</p>
     <p>The site has no known active local point-source pollution: Portland's <a href="https://en.wikipedia.org/wiki/Portland_Brownstone_Quarries" target="_blank" rel="noopener">brownstone quarries</a> (a National Historic Landmark since 2000) were an industrial pollution source historically but have been inactive for decades and are now largely a recreational/historic site, not an emissions source.</p>
@@ -143,42 +143,42 @@
     <p><b>Design implication:</b> on the design's SW-facing edge, dense planting (trees/shrubs) provides some real particulate/ozone-precursor filtering, which is a reasonable added justification (not the primary one) for the native tree diversity already planned for that side of the property. Practically, this also means scheduling strenuous outdoor work for mornings on summer high-ozone days rather than midafternoon peak.</p>
   </div>
 
-  <h2 class="section-head">Crime</h2>
+  <h2 class="section-head" id="crime">Crime</h2>
   <div class="sector-block">
     <p>Portland, CT ranks in the 98th percentile for safety among US cities and is the #2 safest city in Connecticut, with a violent crime rate of roughly 1 per 1,000 residents/year and an overall crime rate about 8x lower than the US average (<a href="https://www.areavibes.com/ct/safest-cities/" target="_blank" rel="noopener">AreaVibes</a>; <a href="https://www.city-data.com/crime/crime-Portland-Connecticut.html" target="_blank" rel="noopener">City-Data</a>).</p>
     <p><b>Response: Use.</b> The sector is genuinely favorable; the correct response is to accept that baseline as-is rather than over-designing security features the site doesn't need.</p>
     <p><b>Design implication:</b> essentially none needed — this sector doesn't justify security-driven design choices (defensive fencing, lighting-for-safety, sightline control against intruders). Fence and layout decisions (garden-fence removal, raised-bed fencing) can be driven entirely by function (deer, aesthetics — see Wildlife, below) rather than security.</p>
   </div>
 
-  <h2 class="section-head">Ice</h2>
+  <h2 class="section-head" id="ice">Ice</h2>
   <div class="sector-block">
     <p>The Northeast sees a major, damaging ice storm roughly every 15&ndash;25 years (most recently 2008, with the 1998 storm — ~1.5"+ accretion — being the region's worst on record, causing roughly $1B in damage). Ice accumulation of just 1/4"&ndash;1/2" is enough to snap small branches and weak limbs; 1/2"&ndash;1" takes down larger branches (<a href="https://northernwoodlands.org/outside_story/article/ice-storms" target="_blank" rel="noopener">Northern Woodlands</a>; NWS Taunton storm reports).</p>
     <p><b>Response: Deflect.</b> Proactive limbing reduces weak-limb ice-load failure risk over paths and structures before it happens.</p>
     <p><b>Design implication:</b> this is a direct, practical reinforcement of two tasks already planned — the planned pine/oak limbing and cutting back the maples aren't just about tick habitat and reuse value, they also reduce the weak-limb load that snaps first in an ice event, particularly over access paths and near structures. Worth keeping in mind when deciding which branches to prioritize removing: weak, low-angle, or overextended limbs over walkways and the shed site first.</p>
   </div>
 
-  <h2 class="section-head">Wildlife Corridors</h2>
+  <h2 class="section-head" id="wildlife">Wildlife Corridors</h2>
   <div class="sector-block">
     <p>The site sits close to the lower Connecticut River corridor, which is a significant regional habitat feature — it's documented as important stopover and breeding habitat for neo-tropical migrant songbirds and supports one of the largest concentrations of migratory waterfowl in southern New England (CT DEEP / regional habitat conservation sources). Deer are locally confirmed near Portland specifically: in fall 2017, Connecticut's <a href="https://portal.ct.gov/deep/news-releases/news-releases---2017/october/deep-reports-small-die-off-in-local-white-tailed-deer-herd" target="_blank" rel="noopener">first-ever confirmed cases of Epizootic Hemorrhagic Disease (EHDV-6) in white-tailed deer</a> began with dead deer found along a small waterbody adjacent to the Connecticut River in Portland; DEEP went on to document 50+ symptomatic deer, primarily in Middletown and Portland, with an estimated 70+ deaths along the Cromwell-to-Old-Lyme stretch of the river that year — direct evidence of an active local deer population using that corridor.</p>
     <p><b>Response: Use</b> (primary), with a targeted Deflect. The regional habitat/corridor value is embraced and leaned into; the deer-browse pressure that comes with it is selectively deflected via fencing/species choice on vulnerable new plantings rather than accepted wholesale.</p>
     <p><b>Design implication:</b> this is a genuinely favorable sector for the property's existing habitat goals (native trees/shrubs, chicken-coop and evergreen habitat cleanup) — the site can meaningfully contribute to a real regional bird/pollinator corridor, not just an isolated garden. It's also the practical reason to expect real deer browse pressure on new plantings: raised beds and any new perennials/shrubs should assume deer will test them, and fencing or species selection (deer-resistant choices, or accepting some loss during establishment — consistent with the phased-planting approach already preferred for this project) should account for that from the start rather than being a reactive fix later.</p>
   </div>
 
-  <h2 class="section-head">Noise</h2>
+  <h2 class="section-head" id="noise">Noise</h2>
   <div class="sector-block">
     <p>Two real, verifiable noise sources sit within the town's small footprint. The <a href="https://en.wikipedia.org/wiki/Arrigoni_Bridge" target="_blank" rel="noopener">Arrigoni Bridge</a> carries <a href="https://en.wikipedia.org/wiki/Connecticut_Route_17" target="_blank" rel="noopener">CT Route 17</a>/<a href="https://en.wikipedia.org/wiki/Connecticut_Route_66" target="_blank" rel="noopener">Route 66</a> across the Connecticut River into Portland, becoming a four-lane road before splitting into Marlborough Street and Gospel Lane — a real traffic corridor, though not a highway-scale one. More distinctively, the former brownstone quarries (161 Brownstone Ave) are now <a href="https://brownstonepark.com/park-rules-faq/" target="_blank" rel="noopener">Brownstone Exploration &amp; Discovery Park</a>, an active outdoor adventure park running its own sound system across the site for water sports, cliff jumping, and group activities in-season. It's in the same small town as the site — Portland's built-up area is compact — though the exact distance from Freestone Avenue wasn't confirmed. The <a href="https://en.wikipedia.org/wiki/Middletown%E2%80%93Portland_railroad_bridge" target="_blank" rel="noopener">Providence &amp; Worcester Railroad also runs an active freight line across the Middletown–Portland railroad bridge</a> — freight, not passenger, so infrequent rather than a steady background source. General aviation airports (Goodspeed in East Haddam, Skylark in East Windsor) are both several miles out and not a meaningful factor here.</p>
     <p><b>Response: Deflect.</b> None of this rises to a dominant sector — no major highway, no passenger rail, no nearby airport — but it's enough to be a mild, real deflect case rather than a non-issue.</p>
     <p><b>Design implication:</b> the plantings already justified for wind and pollutant buffering (the pollard willow row, native tree/shrub diversity) can pull double duty as sound buffering on whichever site edge faces the Route 17/66 corridor or town center, without adding a dedicated noise-buffer planting scheme.</p>
   </div>
 
-  <h2 class="section-head">Views</h2>
+  <h2 class="section-head" id="views">Views</h2>
   <div class="sector-block">
     <p>Portland sits in the lower Connecticut River Valley, with the <a href="https://en.wikipedia.org/wiki/Portland_(CDP),_Connecticut" target="_blank" rel="noopener">Portland CDP</a> bordered by the river to the west and south and a <a href="https://en.wikipedia.org/wiki/Portland,_Connecticut" target="_blank" rel="noopener">town elevation around 157 ft (52 m)</a> — modest relief, not dramatic topography. That's regional context, not parcel-specific fact: nothing in available mapping data confirms whether this site itself has a genuine river sightline, is screened by neighboring structures or tree canopy, or sits on a lot with any real topographic distinction. Consistent with how this report treats other parcel-scale unknowns, that's flagged here rather than guessed at — it needs an on-the-ground check, ideally at both leaf-on and leaf-off, before it factors into design. What the Sun/Solar sector already established with more confidence is directly relevant here too: houses sit close on both sides of this 0.43-acre in-town lot, which makes privacy the more defensible design driver until a real view line is confirmed.</p>
     <p><b>Response: Deflect</b> (pending on-site confirmation). Close neighbor proximity is the confirmed, defensible constraint; a genuine view line hasn't been confirmed yet, so it can't be labeled Use in good faith.</p>
     <p><b>Design implication:</b> default to treating close neighbor proximity as the operating constraint and let any screening/hedge plantings — the pollard willow row and native tree/shrub diversity — serve double duty as privacy buffers on the sides facing neighboring houses. If an on-site check during the Design phase (the planned pine/oak limbing, which already opens sightlines while raising the canopy line, is a natural moment to look) turns up a genuine river or landscape view, that specific sightline shifts to Use — worth keeping open rather than screened.</p>
   </div>
 
-  <h2 class="section-head">Human / Social</h2>
+  <h2 class="section-head" id="social">Human / Social</h2>
   <div class="sector-block">
     <p>Two real regulatory threads matter for this design, both confirmed to exist though not fully verified in detail. First, <a href="https://portal.ct.gov/DOAG/Commissioner/Commissioner/The-Right-to-Farm-Law" target="_blank" rel="noopener">Connecticut's Right to Farm Act</a> (Conn. Gen. Stat. &sect; 19a-341) protects generally-accepted agricultural practices — including livestock noise, odor, and normal farm equipment use — from being treated as a nuisance, provided the operation follows accepted practices (see also the <a href="https://farmlandinfo.org/law/connecticut-right-to-farm-enabling-statute/" target="_blank" rel="noopener">Farmland Information Center's summary</a>). That's a real statewide baseline protection once local rules are met. Second, Portland's own municipal code has a dedicated <a href="https://library.municode.com/ct/portland/codes/code_of_ordinances?nodeId=PTIICOOR_CH5AN" target="_blank" rel="noopener">Animals chapter</a> governing exactly this — confirmed to exist, but its page blocked automated fetching, so the specific numbers (minimum lot size, coop setbacks, flock size caps, rooster restrictions — Connecticut towns commonly ban or restrict roosters in residential zones) weren't retrievable and shouldn't be assumed. No HOA turned up in searches for this address or street, consistent with an older, established CT residential neighborhood rather than a planned community with deed restrictions — but that's an absence-of-evidence finding, not a confirmed absence.</p>
     <p><b>Response: Use.</b> Work within the existing regulatory environment (Right to Farm Act, Portland's animal ordinance) rather than around it — verify and comply, then rely on the statutory protection it provides.</p>
