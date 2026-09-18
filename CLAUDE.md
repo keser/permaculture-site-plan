@@ -156,3 +156,28 @@ section is ever re-ported from that source, the account number must be stripped 
 search for the specific line patterns: a body-text mention near "four consecutive bills"
 and the "Source:" citation line (the account number in the private `pdc-pro-2026` repo is
 the one to search for and remove).
+
+### Project Plan page (`docs/project-plan.html`)
+
+Added 2026-09-18: a public rollup of the task-tracking data — one `.page-section` per
+phase (mirrors `site-plan/phase-*.md`), a Recent Activity section pulled from the latest
+`progress-log.md` entry, and a `.data-table` of every task (ID/description/depends-on/
+status, status rendered as a colored `.status-pill`). Linked from the nav and from a card
+on `index.html`.
+
+**This is a manually ported snapshot, not generated.** The task data now lives in three
+places — the phase files, `project-plan-overview.md` (the internal rollup), and this
+page — with no build step to keep them in sync. Recent Activity is dated (see the
+`subhead-muted` "Snapshot as of" line) rather than a live feed; it's not updated on every
+`progress-log.md` entry, only when someone runs the sync check below. Owner preference
+(2026-09-18): no dedicated tooling/skill for this — just ask Claude to run it before
+planning a visit.
+
+**Pre-visit sync checklist** — run when asked to "sync the project plan pages" (or
+similar), typically before planning a site visit:
+1. Read `progress-log.md` entries since `project-plan.html`'s current snapshot date.
+2. Read the 5 phase files + `project-plan-overview.md` — confirm they still agree with
+   each other (the existing denormalized-rollup risk, see Task Tracking Convention above).
+3. Diff both against `docs/project-plan.html` — update stale task rows/statuses and the
+   Recent Activity section; bump the snapshot date.
+4. Re-run `scripts/build_nav.py` if nav/footer changed, then commit.
