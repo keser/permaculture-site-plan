@@ -20,21 +20,21 @@ Construction dependency was dropped, and R20 and R21 were added.
 
 | ID | Task | Description | Depends On | Status |
 |---|---|---|---|---|
-| R1 | Clear invasive & nuisance species | Remove bittersweet, Rose of Sharon, poison ivy, and overgrowth choking desired plants. 2nd triclopyr round 2026-09-05 (mulberry N side, Zone 3 fence line + coop corner). | — | In Progress |
+| R1 | Clear invasive & nuisance species | Remove bittersweet, Rose of Sharon, poison ivy, and overgrowth choking desired plants. 2nd triclopyr round 2026-09-05 (mulberry N side, Zone 3 fence line + coop corner). 3rd round 2026-09-12–18: bittersweet, poison ivy, other invasive ivies, Rose of Sharon sprouts, and a newly found isolated Japanese knotweed plant; entire tree/ivy-covered fence line cut back and sprayed, drying for mulching next. | — | In Progress |
 | R2 | Clear deadwood & branch fall | Clear accumulated branch fall in the rototiller area and elsewhere, incl. dead mulberry branches. | — | In Progress |
 | R3 | Trim lower branches (spruce & oaks) | Limb lower branches to reduce tick habitat and improve access; keep the trees. Some spruce branches cut 2026-09-05, ~afternoon remaining. | — | In Progress |
 | R6 | Transplant salvageable plants | Move plants worth keeping out of garden areas to be reorganized. | R1 | Yet to Begin |
-| R8 | Cut back maples, save trunks | Cut back maples; keep trunk material for later reuse. 4 maples cut in Zone 5, 2026-09-05. | — | In Progress |
+| R8 | Cut back maples, save trunks | Cut back maples; keep trunk material for later reuse. 4 maples cut in Zone 5, 2026-09-05; running total 5 as of 2026-09-12–18. Some 4" rounds set aside and inoculated as mushroom-log stock (S7, done). Remaining: cut the rest of the current trunks, plus any future ones, into firewood after drying a season. Future felling elsewhere is for sunlight/mulch, not more trunk-salvage. | — | In Progress |
 | R10 | Clear back area, bring scraps to landfill | Clear the back area; haul scrap wood/metal that isn't being kept. | — | Yet to Begin |
 | R16 | Shrink garden footprint, remove garden fence | Reduce garden footprint as part of reorganization. Coop needs its own fenced perimeter (dogs free-roam the garden fence area); doesn't need the old dog kennel as its back fence. | R6 | Yet to Begin |
 | R18 | Notify neighbors of boundary-adjacent plans | Talk to the adjacent neighbors before boundary-adjacent work. | — | Yet to Begin |
 | R19 | Move and organize wood pile | Move the wood pile to the corner by the mulberry; only after R1–R18 above is clear. | R1, R2, R3, R6, R8, R10, R16, R18 | Yet to Begin |
 | R9 | Cut down white cedar | On hold — only if the camper moves closer to the house, or driveway access next door is lost. | — | On Hold — Conditional |
-| R4 | Chip branches for mulch | Chip material from R2/R3 for on-site mulch. Chipper running as of 2026-09-05 — wood must be dry (green material bogs it), so cut material now piles to dry, then gets trimmed to shredder-ready size before shredding. | R2, R3 | In Progress |
-| R5 | Deep mulch non-lawn areas | Apply deep mulch ahead of new plantings. Fence line cleared and mulched from 2026-09. Next: Zone 3 veg garden, coop outward, over flattened cardboard. | R4 | In Progress |
+| R4 | Chip branches for mulch | Chip material from R2/R3 for on-site mulch. Chipper running as of 2026-09-05 — wood must be dry (green material bogs it), so cut material now piles to dry, then gets trimmed to shredder-ready size before shredding. Clog cleared 2026-09-13; no chipping 2026-09-12–18 — deliberately deferred a few weeks until Dad can help (2-person job), buying the piled material more drying time. Largest main branches too big to chip regardless — bound for firewood/hugelkultur. | R2, R3 | In Progress |
+| R5 | Deep mulch non-lawn areas | Apply deep mulch ahead of new plantings. Fence line cleared and mulched from 2026-09. Next: Zone 3 veg garden, coop outward, over flattened cardboard — enough cardboard collected as of 2026-09-18 to cover the whole surface. Waiting on R4's deferred chipping. | R4 | In Progress |
 | R17 | Build raised beds along fence line | Raised beds for tomatoes, peppers, herbs, flowers. (C1–C5 dependency under review — see progress-log.md.) | R1, C1, C2, C3, C4, C5 | Yet to Begin |
-| R20 | Relocate 2 grape vines | Dig up and move the two existing grape plants (Catawba, regrew from being cut to nothing); likely target the new raised beds (D4). Not yet moved as of 2026-09-05. Ties to D4. | — | In Progress |
-| R21 | Air-layer white cedar, Rose of Sharon & lilacs | Propagate all three before removal/reuse; gates the Rose of Sharon side of R1. No air-layering actually started as of 2026-09-05 — cedar pruned (cuttings to chip) and lilacs pruned instead, prepping to air-layer next. | — | In Progress |
+| R20 | Relocate 2 grape vines | Dig up and move the two existing grape plants (Catawba, regrew from being cut to nothing); likely target the new raised beds (D4). Not yet moved as of 2026-09-05. **2026-09-18:** plan changed to leave in place, staked and protected with a raised bed, until dormancy instead of digging up now. Ties to D4. | — | In Progress |
+| R21 | Air-layer white cedar, Rose of Sharon & lilacs | Propagate all three before removal/reuse; gates the Rose of Sharon side of R1. No air-layering actually started as of 2026-09-05 — cedar pruned (cuttings to chip) and lilacs pruned instead, prepping to air-layer next. 2026-09-12–18: lilacs given a major prune, cedar another cleanup pass; still no air-layering on any of the three — pushed to spring (too late in season now). | — | In Progress |
 
 ## Phase 2 — Construction
 
@@ -54,12 +54,12 @@ clearing — runs independently; only C5 → DS1 and C3 → C1 remain.
 | ID | Task | Description | Depends On | Status |
 |---|---|---|---|---|
 | S1 | Hot composting system | Active/hot composting for fast-turnaround waste. NW corner; started weekend of 2026-09-05. | R2, R4 | In Progress |
-| S2 | Cold/slow composting system | Built from the existing Zone 5 brush pile: spray (R1) → shred dried top layer (R4) → compact → enclose in a 3-bin staked-fence structure. | — | In Progress |
+| S2 | Cold/slow composting system | Built from the existing Zone 5 brush pile: spray (R1) → shred dried top layer (R4) → compact → enclose in a 3-bin staked-fence structure. As of 2026-09-18: tree removal for the compost area's footprint is done; posts/fencing for the enclosure still need to go in. Shredding/compacting still blocked on R4's deferred chipping. | — | In Progress |
 | S3 | Forage crops | Forage crop plantings for low-maintenance food systems. | — | Yet to Begin |
 | S4 | Winter cover crops | Cover crops to protect and build soil off-season. | — | Yet to Begin |
 | S5 | Pollard willow row (raw material barrier) | Raw-material crop that doubles as a visual barrier. | — | Yet to Begin |
 | S6 | Storage systems | Storage for raw materials/building supplies, planned together with the shed's design. | DS1 | Yet to Begin |
-| S7 | Mushroom cultivation | Mushroom system using wood byproducts (e.g. maple trunks). | R8 | Yet to Begin |
+| S7 | Mushroom cultivation | Mushroom system using wood byproducts (e.g. maple trunks). Inoculation done as of 2026-09-18: shiitake and oyster spawn plugged into 4" maple and mulberry rounds (from R8), sealed with soy wax, stacked under the pool deck — a deliberate wood/freshness comparison. Nothing further to do but let it colonize. | R8 | In Progress |
 | S8 | Water harvesting system | Capture water off coop/shed roofs. | C5 | Yet to Begin |
 | S10 | Waterfall/pond feature | Long-desired water feature; needs pump + electrical capacity. | C4 | Yet to Begin |
 | S11 | Solar panels on chicken coop | Small-scale renewable energy on the coop. | — | Yet to Begin |
@@ -71,7 +71,7 @@ clearing — runs independently; only C5 → DS1 and C3 → C1 remain.
 | D1 | Plant native trees & shrubs | Diversity over monocrop; fruit, nut, raw material, or habitat yield. | R1 | Yet to Begin |
 | D2 | Plant flowers for beauty & pollinators | Color, pollinator support, cut/dry flower varieties. | — | Yet to Begin |
 | D3 | Perennial garden along back fence | Lilacs (family sentimental) and hydrangeas, planned deliberately. Source lilac stock via air-layering (R21). | R17 | Yet to Begin |
-| D4 | Hops, grapes, blueberries | Productive perennial plantings with practical purpose. Idea: root blueberry cuttings instead of buying new stock. 4 round metal raised beds assembled 2026-09-05 for grapes/hops/vines, incl. a potted passionflower (currently NJ) that could overwinter here. | — | In Progress |
+| D4 | Hops, grapes, blueberries | Productive perennial plantings with practical purpose. ~~Idea: root blueberry cuttings instead of buying new stock.~~ **2026-09-18:** dropped — sourcing new low-bush blueberry plants as ground cover in Zone 5 instead. 4 round metal raised beds assembled 2026-09-05 for grapes/hops/vines; R20's grapes now staying in place, protected in one, until dormancy. Incl. a potted passionflower (currently NJ) that could overwinter here. | — | In Progress |
 | D5 | Clean up chicken/evergreen area for habitat use | Reduce clutter/rodent issues; add raised beds. | R2 | Yet to Begin |
 
 ## Design (Ongoing)
@@ -90,6 +90,8 @@ something in the phase currently under construction.
 - **2026-09-03 revision:** Phase 1 entered progress (R1–R5 In Progress). Phase 2 decoupled from Phase 1 — C1, C2, C4 dependencies cleared; C5 → DS1 only. R4 dependency trimmed to R2, R3. Added R20 (relocate 2 grape vines) and R21 (air-layer white cedar & Rose of Sharon). S1 (hot compost) started ahead of Phase 3. R17's C1–C5 dependency flagged for review. Full narrative in [progress-log.md](progress-log.md).
 - **Weekend of 2026-09-05 (logged 2026-09-11):** chipper operational, first chipping pass — key finding that green wood bogs it, so cut material now dries before shredding. R8 (maples) moved to In Progress. R3's "pines" corrected to **spruce** (actual on-site species). Full narrative, plus the 2026-09-12–18 site stay, in [progress-log.md](progress-log.md).
 - **Same weekend, follow-up detail:** S2 (cold compost) turns out to be built from the existing Zone 5 brush pile, not a from-scratch system — moved to In Progress. R21 broadened to include the lilacs and retitled; despite the 2026-09-03 plan, no air-layering has actually happened yet on cedar, Rose of Sharon, or lilac — prune-first prep only. D4 gained 4 assembled raised beds and moved to In Progress; R20's grapes are likely Catawba and likely headed for those beds.
+- **2026-09-12–18 (logged 2026-09-18):** chipping deferred (R4) a few weeks until Dad can help — no mulching (R5) or S2 compost-enclosure progress as a result. R8's maple count rose to 5 (running total); some trunk rounds set aside for **S7 (mushroom cultivation)**, which moved to In Progress — shiitake/oyster spawn in maple and mulberry rounds under the pool deck. R20 (grapes) and D4 (blueberries) both changed plan: grapes staying put until dormancy instead of being dug up now; blueberries sourced new instead of propagated. R21's lilacs got a major prune; all three propagation targets pushed to spring. R1 picked up a newly found Japanese knotweed plant and another fence-line clearing/spray pass. Full narrative in [progress-log.md](progress-log.md).
+- **Same-day follow-up (2026-09-18):** S7's mushroom-log inoculation is complete, not just started — only colonization monitoring is left. R8's remaining work is cutting the rest of the current (and future) trunks into firewood. S2's compost-area tree clearing is done; only the posts/fencing enclosure is left. Going forward, further tree removal is scoped to sunlight-for-garden or mulch/chip purposes, not more trunk-salvage projects.
 - Cross-phase dependencies (e.g. D3 depends on R17, a Phase 1 task) are intentional — a task doesn't have to depend only on tasks within its own phase.
 - **R7 (Remove chain-link hedge)** was removed — redundant with R1.
 - **S9 (Barn)** was removed — Dad's mention was part of an "anything possible" hypothetical that also included moving the house, which is off the table.
