@@ -1,7 +1,9 @@
 # Map Asset Design System — Keys & Legends
 
-Status: approved 2026-09-28 — all four decision forks resolved below (Forks 2 and 3 adopted at
-their recommended defaults, per Andrew's go-ahead). Ready for the implementation plan.
+Status: approved 2026-09-28, extended 2026-09-29 — Phases 1–4 built and confirmed working; the
+"Layer Styles" section below documents Phase 6, a rework covering Tone (Shade/Tint), Area
+fill/stroke, opacity, the Caption component, and Marker `Shape`. Ready for an implementation plan
+covering Phase 6.
 
 ## Goal
 
@@ -103,16 +105,143 @@ not bindable tokens the way color is: Weight (thin / standard / heavy) × Dash (
 / coarse-dash) × Arrow (none / single / double) — a bounded set, not a combination invented ad
 hoc per line as today.
 
-**Fork 3 — marker shape vocabulary — resolved at the recommended default.** Numbered circle
-(existing pattern, keep) for anything site/sequence-based — soil samples, future dig sites;
-icon-in-circle (the water meter marker already does this — extend the pattern) for fixed
-infrastructure/feature types. Shape + color + optional number, not color + number alone.
+**Fork 3 — marker shape vocabulary — resolved, then expanded 2026-09-29.** Original default
+(numbered circle / icon-in-circle) held, then grew a second axis once Andrew confirmed markers
+also need non-circle shapes. See "Layer Styles" below for the final `Style × Shape` design.
 
 **Fork 4 — retrofit scope — resolved.** Build the full system now (palette, line styles,
 markers, legend row component). Applying/retrofitting it onto existing Base Map geometry
 (driveway, garden beds, site boundary, etc. — currently almost all raw hex) is an explicit,
 separate, opt-in follow-up pass, not part of this build — it's a mechanical pass across finished
 work with real risk of visual regressions, and deserves its own review rather than riding along.
+
+## Layer Styles — Tone, Opacity, Stroke Rules, Captions, and Marker Shape (added 2026-09-29)
+
+The Task 1–4 build (below) shipped Area/Line/Marker/Legend-Row using only each hue's single
+existing `/700` semantic step, no stroke on Area, and no caption system. Feedback after using it:
+that's a narrower, more muted palette than intended, and misses real patterns already established
+elsewhere in the file. This section documents what changes, grounded in specific existing
+examples rather than invented from scratch — every rule below was found live in the file, not
+proposed cold.
+
+### Tone axis — `Shade` / `Tint`
+
+The Keys page's `Sector Compass Key` (`153:2052`) has two full copies — `Mode=Dark` (`153:2053`)
+and `Mode=Light` (`153:2051`) — because Andrew couldn't decide which read better in a given deck.
+Inspecting them: this is **not** a background-theme toggle, it's two saturation tiers of the same
+hues (dark/saturated vs. pastel/light), and it's built as two entirely separate hand-duplicated
+frames (`key – dark` / `key – light`, each with its own full set of row instances) — not a Figma
+variable *mode* switch.
+
+**Decision:** formalize this as a per-instance pick, not a page-wide mode switch — Andrew:
+"some overlays need darker or lighter treatment depending on context," i.e. it varies within a
+single map, not per-map. Every `Map Overlay` hue gets a second semantic variant:
+- **`Shade`** — the existing darker `/700` step. Pairs with **white** text/content.
+- **`Tint`** — a new, lighter/brighter step (need to pick the exact ramp step per hue during
+  Phase 1 rework — the existing `Mode=Light` pastel felt *less* distinct hue-to-hue than the dark
+  version on inspection, so "Tint" should land brighter/more saturated than that pastel precedent,
+  not just lighter). Pairs with **black** text/content.
+
+This doubles the usable palette from 10 semantic colors to 20 (`amber/Shade`, `amber/Tint`,
+`sage/Shade`, `sage/Tint`, etc.), still all sourced from the same `Ramps` primitives.
+
+**Naming note:** deliberately not "Dark/Light" — that name is already used for the *caption*
+component's own axis (see below), which is a different concept (neutral background + max-contrast
+text, not a hue/saturation choice). `Shade`/`Tint` is also the technically correct color-theory
+term for exactly this operation (mixing a hue toward black vs. toward white).
+
+### Palette access — curated styles, full override available
+
+Andrew: "a curated subset works, as long as I can override from a set of predefined styles that
+don't necessarily get built into the subset." Two-layer approach:
+- **Curated layer:** a defined set of Figma Paint Styles built from the most commonly-needed
+  `Map Overlay` Shade/Tint values — these are what show up as quick picks.
+- **Override layer:** every swatch's fill/stroke stays a bound *variable*, not just a style
+  reference, so any instance can be rebound to any `Ramps`/`Map Overlay` value outside the
+  curated set without breaking the pattern — this is the same variable-rebind mechanism already
+  used throughout Task 4, just not restricted to the curated list.
+
+### Area fill/stroke rule
+
+Checked two real precedents:
+- **Microclimates** (`222:2359`, e.g. `222:2365` "MC-02"): every zone uses fill at exactly **50%
+  paint opacity** + stroke at **100% opacity, weight 4**, but the stroke color is a **fixed
+  neutral dark** (`~#2a2d39`) across every category — the fill varies, the stroke never does. This
+  is the "reduced-opacity fill, solid stroke" pattern Andrew described, but with a stroke rule
+  that turned out not to match the intended design.
+- **Live Goals Map** (`0:1`, `Soil Building Goals Overlay` frame `364:1131`): `goal-zone: invasive
+  treatment` (`364:1138`) has **no fill at all**, stroke-only, dashed — confirms fill can be
+  legitimately empty for a pure boundary/region marker. `goal-zone: chicken paddock`, second draft
+  (`365:1559`), has both: fill magenta at low opacity, stroke a **visibly darker/more saturated
+  version of the same magenta** — not a fixed neutral. This is the actual intended rule, per
+  Andrew directly: "in all cases where there is a fill, the stroke should be a darker value from
+  the same color ramp."
+
+**Rule:** `Area` variant always supports both fill and stroke as independent, optional-fill
+channels:
+- Fill: optional — omit entirely for a stroke-only boundary/region outline.
+- Stroke: whenever fill is present, bind it to a **darker step of the same hue** as the fill (not
+  a fixed neutral, correcting the Microclimates precedent). Stroke-only shapes (no fill) can use
+  any hue/step needed for the boundary itself.
+- How many overlapping elements a given map needs to distinguish determines stroke *weight* and
+  whether one is needed at all — Andrew: this is a per-map judgment call, not a fixed rule, so
+  weight stays a free property per instance (informed by, but not locked to, the Line weight
+  vocabulary from Task 2).
+
+### Opacity — fixed set
+
+**Rule:** fill opacity is chosen from a **fixed set of 25 / 50 / 100%** — covers the majority of
+cases per Andrew, replacing freeform per-instance values (Microclimates used 50%, one early Goals
+Map draft used 10% — that 10% predates this decision and isn't being kept as a fourth tier).
+Stroke opacity is always 100% (matches every example checked — Microclimates, both Goals Map
+zones, and every caption instance below).
+
+### Caption system
+
+Andrew pointed to the actual source: the slide-deck template file (`KDVfc0v5jT8jKB3OK11axN`,
+"Template – PDC PRO," node `31:2535`) defines a real `caption` `COMPONENT_SET` with two variant
+axes — **`Style`**: `Dark` (`#262626` fill + stroke, white text) / `Light` (white fill, near-
+invisible stroke, black text) — crossed with **`Size`**: `SM` (16px) / `LG` (20px). A sibling
+`Pill` component set (rounder, 32px, badge-style) and a plain `item-label` component follow
+similar but distinct patterns — not part of this system.
+
+Checked 7 live instances of this component on the actual Goals Map (`364:1133` ChipDrop,
+`364:1139` Invasive Treatment Zone, `364:1142` Chicken Paddock, `364:1152` Camper/Fire
+Pit/Brick Oven, `364:1155` Garden Entrance, `364:1136` and `365:1603` Interim Waste Pit/Compost)
+— every one is `Style=Light`, detached from the template, and follows one identical customization:
+**white fill @ 85% opacity, black text, `cornerRadius: 3`, and the stroke recolored per instance
+to match whatever it's captioning, at 100% opacity, weight 1.5.**
+
+**Decision:** this answers "how does a caption relate to the palette" directly — it doesn't need
+its own Shade/Tint color variants. It stays neutral (`Style=Dark`/`Light`, unchanged from the
+template) for maximum text legibility, and connects to its subject purely through the **stroke**
+color, exactly like the Area rule above. Import the template's `caption` component (not rebuild
+it from scratch) and standardize the "white 85% / black text / radius 3 / colored stroke @ 100%,
+weight 1.5" customization as the documented default for `Style=Light` on a map, rather than a
+one-off detach-and-tweak per instance.
+
+### Marker — `Style × Shape`
+
+Confirmed on the live Goals Map: every marker there (`364:1132` ChipDrop, and others) is a plain
+colored glyph with no text baked in — the caption box next to it carries the text, matching
+Andrew's "transparent markers never have text over them" point. This is a **different**, equally
+valid convention from the in-marker-text badges built in Task 3 (soil samples, "WM," "W/G/S/P/D"
+codes) — Andrew confirmed explicitly: both stay. Marker text content is free-form (letter, number,
+or other glyph), which the existing `Number` TEXT property already supports without change.
+
+New requirement: markers need non-circle shapes too — the existing "interim waste pit" marker is
+already a stand-alone diamond-ish `POLYGON`, informally, not part of any component.
+
+**Decision:** add a second variant axis, `Shape`, crossed with the existing `Style` axis:
+- `Style`: `Numbered` / `Icon` / `Dot` (unchanged from Task 3)
+- `Shape`: `Circle` / `Square` / `Triangle` / `Hexagon`
+
+12 variants total — comfortably under the point where a matrix gets unwieldy, and every
+combination is legitimate (e.g. `Dot × Triangle` is exactly the existing waste-pit marker,
+formalized). `Square` uses sharp corners by default; corner-radius override stays a per-instance
+property, not its own variant, unless that need recurs enough to justify promoting it later.
+Triangle needs its text/icon nudged off true bounding-box center — a triangle's visual center
+sits below the box center — everything else centers normally.
 
 ## Proposed build order
 
@@ -151,6 +280,17 @@ being redesigned per key as those pieces land.
 1. Use the finished system for all new Lesson 6+ map additions.
 2. (Separate go-ahead required) retrofit existing Base Map geometry to the new variables/styles.
 
+**Phase 6 — Layer Styles rework (2026-09-29 addendum; Phases 1–4 already built without this)**
+1. Add a `Shade`/`Tint` second semantic step to all 10 `Map Overlay` hues (20 total); build the
+   curated Paint Style layer on top.
+2. Add a `stroke` slot to the `Legend Row` `Area` variant (currently fill-only), with the
+   same-hue-darker-step binding rule; make fill optional.
+3. Import the `caption` component from the Template file and standardize the live
+   white-85%/black-text/radius-3/colored-stroke customization as its documented default.
+4. Add the `Shape` variant axis (`Circle/Square/Triangle/Hexagon`) to `Site Marker`, crossed with
+   the existing `Style` axis (12 variants); fix triangle's optical text-centering.
+5. Re-apply the fixed 25/50/100 opacity set to any Task 4 rows that used a different value.
+
 ## Accessibility checkpoints (threaded through every phase, not a separate pass)
 
 - Contrast-check every palette hue (all 10, after the amber addition) against both light and
@@ -176,6 +316,6 @@ being redesigned per key as those pieces land.
 
 ## Next step
 
-All decision forks are resolved — see `site-plan/plans/2026-09-28-map-design-system.md` for the
-task/step implementation breakdown, following this repo's normal spec → plan split. Construction
-in Figma starts once that plan is reviewed.
+Phases 1–4's task/step breakdown is in `site-plan/plans/2026-09-28-map-design-system.md` (done).
+Phase 6 (Layer Styles rework, above) still needs its own task/step breakdown added to that plan
+before construction resumes, following this repo's normal spec → plan split.
