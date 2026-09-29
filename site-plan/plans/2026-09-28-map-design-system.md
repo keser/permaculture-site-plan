@@ -241,6 +241,79 @@ directly to each line's own vector, not a drag-and-drop component.
 
 ---
 
+## Task 5: Layer Styles rework (Phase 6 — Tone, Area stroke, Caption, Marker Shape)
+
+**Spec:** see "Layer Styles" section in `site-plan/specs/2026-09-28-map-design-system-design.md`
+(added 2026-09-29) for the full reasoning and the specific live examples each rule is grounded
+in — this task implements that section.
+
+**Interfaces:**
+- Consumes: Tasks 1–4's output (`Map Overlay` variables, `Legend Row`, `Site Marker`,
+  `Line Sample`), plus the `caption` component from the Template file
+  (`KDVfc0v5jT8jKB3OK11axN`, node `31:2535`).
+- Produces: a `Tint` semantic variant per hue (20 total colors) + curated Paint Styles; a stroke
+  slot on `Legend Row`'s `Area` variant; a ported `caption` component in `aF9SVeTLwFN8PCEiU2OSBQ`;
+  a 12-variant `Site Marker` (`Style × Shape`).
+
+- [ ] **Step 1: Add the `Tint` tier.** For each of the 10 `Map Overlay` hues (`amber` included):
+  rename the existing semantic variable to make its role explicit (e.g. `amber` → `amber/Shade` —
+  safe to rename without breaking existing bindings, since Figma tracks variables by ID, not
+  name), then add a sibling `amber/Tint` aliased to a **brighter** `Ramps` step than `/700` — try
+  `/500` first (that read as the most saturated, distinct step per hue during Task 1's audit), not
+  a pastel like the old `Mode=Light` precedent. Contrast-audit the new `Tint` set the same way
+  Task 1 did Step 4 (vs. light bg, vs. its own `Shade` counterpart, pairwise hue check) — revise
+  the step per-hue if any fail, same as `amber`'s H-angle revision in Task 1. Once the 20 values
+  are locked, build a curated Paint Style per hue/tone (20 Paint Styles) so they show up as quick
+  picks — keep every swatch's fill/stroke bound to the underlying *variable*, not just the style,
+  so anything outside the curated 20 stays reachable by rebinding (per the spec's "override
+  layer").
+
+- [ ] **Step 2: Add a stroke to `Legend Row`'s `Area` variant** (currently fill-only). Fill
+  becomes optional (add a `Show Fill` BOOLEAN component property so a pure stroke-only boundary
+  row is possible, matching `goal-zone: invasive treatment`'s empty-fill precedent). Stroke rule:
+  whenever fill is present, bind the stroke to the **darker (`Shade`) step of the same hue** as
+  the fill — note this is a **manual pairing convention, not an automatic derived binding**: Figma
+  variables can't compute "darker than whatever the fill is currently bound to," so this has to
+  be applied by hand per instance (fill=`sage/Tint` → stroke=`sage/Shade`) and spot-checked, not
+  guaranteed by the component alone. Fill opacity: expose only the fixed 25/50/100 set from the
+  spec (a variant property or a documented convention, not a free slider); stroke opacity always
+  100%, per every example checked.
+
+- [ ] **Step 3: Port the `caption` component.** Cross-file note: the source lives in a *Slides*
+  file (`KDVfc0v5jT8jKB3OK11axN`) and the target is a *Design* file
+  (`aF9SVeTLwFN8PCEiU2OSBQ`) — these are different editor types, so it can't be instanced
+  directly across files; rebuild it natively in `aF9SVeTLwFN8PCEiU2OSBQ`'s `Components` section,
+  matching the source exactly: `Style` (`Dark`: `#262626` fill+stroke, white text · `Light`:
+  white fill, near-invisible stroke, black text) × `Size` (`SM` 16px / `LG` 20px). Then
+  standardize the live customization pattern found on 7 real Goals Map instances as `Style=Light`'s
+  **documented default**, not a one-off per-instance detach-and-tweak: white fill @ 85% opacity,
+  black text, `cornerRadius: 3`, stroke at 100% opacity/weight 1.5 rebound to match whatever the
+  caption is labeling (same rebind-the-stroke mechanism as Area).
+
+- [ ] **Step 4: Add the `Shape` axis to `Site Marker`.** Currently 3 variants (`Style`:
+  `Numbered/Icon/Dot`, all circular). Add `Shape` (`Circle/Square/Triangle/Hexagon`) as a second
+  variant axis, crossed with `Style` — 12 variants total. `Square`: sharp corners (no
+  `cornerRadius`). `Triangle`/`Hexagon`: built as `POLYGON` nodes (`pointCount` 3 / 6) at the same
+  30×30 footprint as the existing circles, so grid alignment in legend rows doesn't change.
+  Triangle-specific: nudge the `Number`/icon child up from true bounding-box center — a triangle's
+  visual center sits below box-center, so default centering will look low. Adding a new variant
+  axis to an existing component set is safe for the 54 `Legend Row` instances already placed in
+  Task 4 — they'll default to `Shape=Circle` (matching their current visual) with no manual fixup
+  needed, but verify this after the axis is added rather than assuming it.
+
+- [ ] **Step 5: Audit Task 4 rows for opacity.** Spot-check the 54 `Legend Row` instances built in
+  Task 4 for any fill opacity outside the new fixed 25/50/100 set (expected to be a no-op — Task 4
+  only used solid 100% fills — but confirm rather than assume, since the spec now makes 100% one
+  of three sanctioned values rather than the only one).
+
+- [ ] **Step 6: Validate.** Screenshot: the 20-color `Tint`/`Shade` swatch set side by side; one
+  `Area` row with fill+stroke and one stroke-only `Area` row; the ported `caption` component's 4
+  variants next to a live-customized example; the full 12-variant `Site Marker` grid, with
+  particular attention to `Triangle` text centering. Confirm via read-only `use_figma` that no
+  existing Task 4 instance regressed (still 54 `Legend Row` instances, headings unchanged).
+
+---
+
 ## Final Verification (after all 4 tasks) — ✅ all confirmed 2026-09-28
 
 - [x] All 10 `Map Overlay` variables exist, scoped `ALL_FILLS, STROKE_COLOR`, none left at
