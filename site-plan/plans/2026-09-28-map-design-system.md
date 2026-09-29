@@ -241,7 +241,7 @@ directly to each line's own vector, not a drag-and-drop component.
 
 ---
 
-## Task 5: Layer Styles rework (Phase 6 — Tone, Area stroke, Caption, Marker Shape)
+## Task 5: Layer Styles rework (Phase 6 — Tone, Area stroke, Caption, Marker Shape) — ✅ done 2026-09-29
 
 **Spec:** see "Layer Styles" section in `site-plan/specs/2026-09-28-map-design-system-design.md`
 (added 2026-09-29) for the full reasoning and the specific live examples each rule is grounded
@@ -255,62 +255,64 @@ in — this task implements that section.
   slot on `Legend Row`'s `Area` variant; a ported `caption` component in `aF9SVeTLwFN8PCEiU2OSBQ`;
   a 12-variant `Site Marker` (`Style × Shape`).
 
-- [ ] **Step 1: Add the `Tint` tier.** For each of the 10 `Map Overlay` hues (`amber` included):
-  rename the existing semantic variable to make its role explicit (e.g. `amber` → `amber/Shade` —
-  safe to rename without breaking existing bindings, since Figma tracks variables by ID, not
-  name), then add a sibling `amber/Tint` aliased to a **brighter** `Ramps` step than `/700` — try
-  `/500` first (that read as the most saturated, distinct step per hue during Task 1's audit), not
-  a pastel like the old `Mode=Light` precedent. Contrast-audit the new `Tint` set the same way
-  Task 1 did Step 4 (vs. light bg, vs. its own `Shade` counterpart, pairwise hue check) — revise
-  the step per-hue if any fail, same as `amber`'s H-angle revision in Task 1. Once the 20 values
-  are locked, build a curated Paint Style per hue/tone (20 Paint Styles) so they show up as quick
-  picks — keep every swatch's fill/stroke bound to the underlying *variable*, not just the style,
-  so anything outside the curated 20 stays reachable by rebinding (per the spec's "override
-  layer").
+- [x] **Step 1: Added the `Tint` tier.** Renamed all 10 `Map Overlay` semantics to `<hue>/Shade`
+  (safe — same variable ID, existing bindings unaffected) and added 10 `<hue>/Tint` variables
+  aliased to each hue's `/500` step. Contrast audit: all 10 Tints pass ≥3.0 against light bg
+  (3.84–4.75). Against black text specifically, 3 came in borderline under the stricter 4.5
+  AA-normal-text bar — `coral` (4.37), `magenta` (4.19), `violet` (4.47) — all still pass AA-large
+  (≥3.0); flagged, not revised, matching Task 1's precedent of surfacing rather than silently
+  adjusting. Pairwise hue check: `coral` vs `amber` sit 23.3° apart at the Tint tier (close to,
+  but under, the 25° comfort line from Task 1) — visually distinguishable in the validation
+  screenshot (pink-red vs. orange), not treated as a collision. Built 20 curated Paint Styles
+  (`<hue>/Shade`, `<hue>/Tint`), each bound to its variable. Screenshotted a temporary 20-swatch
+  Shade/Tint strip for visual confirmation — Tint reads clearly brighter and more distinct
+  hue-to-hue than Shade, matching the goal — then removed the temporary strip.
 
-- [ ] **Step 2: Add a stroke to `Legend Row`'s `Area` variant** (currently fill-only). Fill
-  becomes optional (add a `Show Fill` BOOLEAN component property so a pure stroke-only boundary
-  row is possible, matching `goal-zone: invasive treatment`'s empty-fill precedent). Stroke rule:
-  whenever fill is present, bind the stroke to the **darker (`Shade`) step of the same hue** as
-  the fill — note this is a **manual pairing convention, not an automatic derived binding**: Figma
-  variables can't compute "darker than whatever the fill is currently bound to," so this has to
-  be applied by hand per instance (fill=`sage/Tint` → stroke=`sage/Shade`) and spot-checked, not
-  guaranteed by the component alone. Fill opacity: expose only the fixed 25/50/100 set from the
-  spec (a variant property or a documented convention, not a free slider); stroke opacity always
-  100%, per every example checked.
+- [x] **Step 2: Added a stroke to `Legend Row`'s `Area` variant.** Split the single `area-fill`
+  rect into two independent layers: `fill` (existing rect, renamed, `visible` wired to a new
+  `Show Fill` BOOLEAN component property, default `true`) and a new `stroke` rect (no fill,
+  `strokeWeight: 2`, `strokeAlign: INSIDE`, stroke bound to a variable, default `sage/Shade`).
+  Validated both documented cases directly: fill=`coral/Tint` + stroke=`coral/Shade` renders a
+  bright fill with a visibly darker border (the fill/stroke pairing rule); `Show Fill: false` +
+  stroke=`amber/Shade` renders a clean stroke-only outline with no fill, matching the
+  `goal-zone: invasive treatment` precedent. Both test instances removed after validation.
 
-- [ ] **Step 3: Port the `caption` component.** Cross-file note: the source lives in a *Slides*
-  file (`KDVfc0v5jT8jKB3OK11axN`) and the target is a *Design* file
-  (`aF9SVeTLwFN8PCEiU2OSBQ`) — these are different editor types, so it can't be instanced
-  directly across files; rebuild it natively in `aF9SVeTLwFN8PCEiU2OSBQ`'s `Components` section,
-  matching the source exactly: `Style` (`Dark`: `#262626` fill+stroke, white text · `Light`:
-  white fill, near-invisible stroke, black text) × `Size` (`SM` 16px / `LG` 20px). Then
-  standardize the live customization pattern found on 7 real Goals Map instances as `Style=Light`'s
-  **documented default**, not a one-off per-instance detach-and-tweak: white fill @ 85% opacity,
-  black text, `cornerRadius: 3`, stroke at 100% opacity/weight 1.5 rebound to match whatever the
-  caption is labeling (same rebind-the-stroke mechanism as Area).
+- [x] **Step 3: Ported the `caption` component.** Pulled full structural detail from the
+  template (`KDVfc0v5jT8jKB3OK11axN`, node `31:2535`, `COMPONENT_SET` `37:317`): `Style`
+  (`Dark`/`Light`) × `Size` (`SM`/`LG`), font `JetBrains Mono Bold` (confirmed available in
+  `aF9SVeTLwFN8PCEiU2OSBQ`), `SM` padding 4px/16px text, `LG` padding 8px/20px text. Rebuilt
+  natively in the `Keys` page (new `caption` `COMPONENT_SET`, `640:4373`) — `Dark` variants are a
+  faithful port (`cornerRadius: 0`, `#262626` fill/stroke, white text, matching source exactly).
+  `Light` variants ship with the live-customization pattern baked in as the new default rather
+  than the template's literal near-invisible border: `cornerRadius: 3`, white fill @ 85% opacity,
+  black text, stroke bound to a variable (default `charcoal/Shade`) at 100% opacity/weight 1.5 —
+  ready to rebind per instance to match whatever it's captioning. Validated by rebinding a test
+  instance's stroke to `coral/Shade` and setting its text to "Invasive Treatment Zone" — visually
+  matches the real Goals Map example almost exactly. Test instance removed after validation.
 
-- [ ] **Step 4: Add the `Shape` axis to `Site Marker`.** Currently 3 variants (`Style`:
-  `Numbered/Icon/Dot`, all circular). Add `Shape` (`Circle/Square/Triangle/Hexagon`) as a second
-  variant axis, crossed with `Style` — 12 variants total. `Square`: sharp corners (no
-  `cornerRadius`). `Triangle`/`Hexagon`: built as `POLYGON` nodes (`pointCount` 3 / 6) at the same
-  30×30 footprint as the existing circles, so grid alignment in legend rows doesn't change.
-  Triangle-specific: nudge the `Number`/icon child up from true bounding-box center — a triangle's
-  visual center sits below box-center, so default centering will look low. Adding a new variant
-  axis to an existing component set is safe for the 54 `Legend Row` instances already placed in
-  Task 4 — they'll default to `Shape=Circle` (matching their current visual) with no manual fixup
-  needed, but verify this after the axis is added rather than assuming it.
+- [x] **Step 4: Added the `Shape` axis to `Site Marker`.** Renamed the 3 existing variants to
+  `Style=<X>, Shape=Circle` (same IDs, no instance impact), then built 9 new variants
+  (`Numbered/Icon/Dot` × `Square/Triangle/Hexagon`) by cloning each Circle variant and swapping
+  its `ELLIPSE` for a `RECTANGLE` (Square) or `POLYGON` (`pointCount: 3` Triangle, `pointCount: 6`
+  Hexagon) at the same footprint, then `appendChild`-ing each into the existing `Site Marker` set
+  — 12 variants total. **Hit and fixed a real bug:** first pass rotated the hexagon polygon 90° to
+  get a flat-top orientation, which threw off its rendered bounding box badly enough to hide
+  sibling content entirely (the `Icon` variant's hexagon swallowed its own icon). Fixed by
+  dropping the rotation — Figma's default pointy-top hexagon reads fine at this size, no rotation
+  needed. **Triangle centering, corrected from the spec's phrasing:** a triangle's centroid sits
+  at 2/3 of its height from the apex — *below* true bounding-box center, not above — so content
+  needs to shift **down** (not up, as the spec draft said) to read as optically centered; applied
+  a 4px downward nudge, confirmed visually. Verified all 18 `Site Marker` instances already
+  placed inside the 54 Task 4 `Legend Row` rows resolved `Shape=Circle` automatically with zero
+  manual fixup needed and zero regressions (still 54 rows, all headings unchanged).
 
-- [ ] **Step 5: Audit Task 4 rows for opacity.** Spot-check the 54 `Legend Row` instances built in
-  Task 4 for any fill opacity outside the new fixed 25/50/100 set (expected to be a no-op — Task 4
-  only used solid 100% fills — but confirm rather than assume, since the spec now makes 100% one
-  of three sanctioned values rather than the only one).
+- [x] **Step 5: Audited Task 4 rows for opacity.** Checked all 22 `Area`-type rows across the 6
+  rebuilt keys — zero fills using an opacity outside `{25%, 50%, 100%}` (all were unset/100%, as
+  expected — Task 4 never touched fill opacity). Confirmed rather than assumed; no-op.
 
-- [ ] **Step 6: Validate.** Screenshot: the 20-color `Tint`/`Shade` swatch set side by side; one
-  `Area` row with fill+stroke and one stroke-only `Area` row; the ported `caption` component's 4
-  variants next to a live-customized example; the full 12-variant `Site Marker` grid, with
-  particular attention to `Triangle` text centering. Confirm via read-only `use_figma` that no
-  existing Task 4 instance regressed (still 54 `Legend Row` instances, headings unchanged).
+- [x] **Step 6: Validated.** All sub-validations done inline per step above (20-swatch Tint/Shade
+  strip, Area fill+stroke and stroke-only cases, caption stroke-recolor test, full 12-variant
+  Marker grid at 4× zoom). No regressions to the 54 existing `Legend Row` instances at any point.
 
 ---
 
@@ -347,3 +349,14 @@ in — this task implements that section.
   copy-paste spanning ~9 rows of the generic `Key`.
 - **Icon variant has only one placeholder glyph** (a generic diamond) — real per-meaning icons
   (water drop, compost bin, etc.) can be swapped in later; none were invented.
+- **3 of the 10 new `Tint` colors** (`coral`, `magenta`, `violet`) are borderline under WCAG
+  AA-normal-text (4.5) against black text — all still pass AA-large (≥3.0). Flagged, not revised.
+- **`coral/Tint` vs. `amber/Tint`** sit 23.3° apart in hue — under the 25° comfort line used in
+  Task 1's audit, though clearly distinct in the validation screenshot. Worth a second look if a
+  map ever uses both together.
+- **Area's stroke-matches-fill-hue rule is a manual convention, not enforced by the component** —
+  Figma variables can't derive "darker than whatever the fill is currently bound to," so pairing
+  `sage/Tint` fill with `sage/Shade` stroke has to be applied and spot-checked by hand per
+  instance.
+- **`Legend Row`'s `Area` variant's fill-opacity limit (25/50/100)** is a documented convention,
+  not a hard constraint — nothing stops setting an arbitrary opacity value on an instance.
