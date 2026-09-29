@@ -4,6 +4,17 @@ Dated record of on-the-ground work and plan revisions. The phase files hold task
 definitions and current status; this file holds the narrative — what happened, when, and
 why the plan changed. Newest entry first.
 
+## 2026-09-29
+
+### SE-corner hedge removed and leveled
+
+The SE-corner street-side hedge — the one flagged in the Lesson 6 Soil Building Goals
+brainstorm as a pending windbreak/screening decision and as a landmark for the ChipDrop
+drop-off location — has been completely removed and the ground raked level. No planting
+decision made yet; the spot is bare, raked soil, ready for whatever fills it next (see the
+open windbreak/screening lead in `pdc-pro-2026/lesson-06-soil-nutrient-cycling/work/
+soil-building-goals-brainstorm.md`, updated same day).
+
 ## 2026-09-18
 
 ### On-site 2026-09-12 through 2026-09-18 — piling, pruning, and a mushroom-log experiment; chipping deferred

@@ -346,14 +346,20 @@ other 11 rows unchanged.
 
 ## Known follow-ups (not done, intentionally out of scope for this plan)
 
-- **Fork 4 retrofit** — Base Map page geometry (driveway, garden beds, site boundary, electrical,
-  etc.) still uses raw hex almost everywhere; binding it to `Map Overlay` variables is a separate,
-  later pass per the spec.
+- **Fork 4 retrofit — deferred indefinitely (2026-09-29).** Base Map page geometry (driveway,
+  garden beds, site boundary, electrical, etc.) still uses raw hex almost everywhere. Not just
+  postponed — the color Base Map has seen little use since it was built to meet a one-off
+  requirement; Andrew's actual work is all in the greyscale version, so there's no live need to
+  retrofit or keep the color hex values current. Revisit only if the color version is needed
+  again.
 - **Dark-mode contrast** — all 10 `Map Overlay` colors fail WCAG AA-large against a dark
   background; only matters if these colors are ever reused in this repo's dark-mode HTML pages.
-- **Content gaps found, not fixed:** the 2 `"Title"` placeholder rows, the blank "High Points"
-  swatch, and (informational only, left hidden) the "water concentrates here" body-text
-  copy-paste spanning ~9 rows of the generic `Key`.
+- **Content gaps found, not fixed — confirmed placeholder/non-issues (2026-09-29), no action
+  needed:** the 2 `"Title"` placeholder rows, the blank "High Points" swatch, and the
+  "water concentrates here" body-text copy-paste spanning ~9 rows of the generic `Key`.
+- **Further component cleanup and real content is Andrew's, manually** — applying the system to
+  existing/new map assets, and further refining the components built here (including replacing
+  `Site Marker`'s placeholder icon).
 - **Icon variant has only one placeholder glyph** (a generic diamond) — real per-meaning icons
   (water drop, compost bin, etc.) can be swapped in later; none were invented.
 - **3 of the 10 new `Tint` colors** (`coral`, `magenta`, `violet`) are borderline under WCAG

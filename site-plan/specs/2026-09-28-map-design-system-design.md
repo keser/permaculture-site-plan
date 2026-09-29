@@ -109,11 +109,14 @@ hoc per line as today.
 (numbered circle / icon-in-circle) held, then grew a second axis once Andrew confirmed markers
 also need non-circle shapes. See "Layer Styles" below for the final `Style × Shape` design.
 
-**Fork 4 — retrofit scope — resolved.** Build the full system now (palette, line styles,
-markers, legend row component). Applying/retrofitting it onto existing Base Map geometry
-(driveway, garden beds, site boundary, etc. — currently almost all raw hex) is an explicit,
-separate, opt-in follow-up pass, not part of this build — it's a mechanical pass across finished
-work with real risk of visual regressions, and deserves its own review rather than riding along.
+**Fork 4 — retrofit scope — resolved, then deferred indefinitely 2026-09-29.** Build the full
+system now (palette, line styles, markers, legend row component). Applying/retrofitting it onto
+existing Base Map geometry (driveway, garden beds, site boundary, etc. — currently almost all raw
+hex) is an explicit, separate, opt-in follow-up pass, not part of this build. **Update
+2026-09-29:** not just deferred — off the table for now. The color Base Map was built once to meet
+a specific requirement and has seen little use since; all of Andrew's actual work has been in the
+greyscale version, so there's no live need to retrofit or keep the color hex values current. Revisit
+only if the color version is needed again (e.g. for a slide deck).
 
 ## Layer Styles — Tone, Opacity, Stroke Rules, Captions, and Marker Shape (added 2026-09-29)
 
