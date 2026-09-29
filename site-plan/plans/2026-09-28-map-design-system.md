@@ -314,6 +314,13 @@ in — this task implements that section.
   strip, Area fill+stroke and stroke-only cases, caption stroke-recolor test, full 12-variant
   Marker grid at 4× zoom). No regressions to the 54 existing `Legend Row` instances at any point.
 
+**Post-Task-5 follow-up:** the "Interim Waste Pit" row (`424:3929`) was built in Task 4 as
+`Style=Icon` with the generic placeholder diamond, called out at the time as an approximation of
+the original standalone `waste-pit` `POLYGON` marker. With `Shape` now available, swapped it to
+`Style=Dot, Shape=Triangle`, `amber/Tint` fill — a direct, faithful match to the original design
+instead of a diamond-in-a-circle stand-in. Verified the full key still renders correctly — all
+other 11 rows unchanged.
+
 ---
 
 ## Final Verification (after all 4 tasks) — ✅ all confirmed 2026-09-28
